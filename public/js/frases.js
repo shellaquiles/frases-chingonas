@@ -364,10 +364,31 @@ const App = {
     },
 
     /**
+     * Actualiza el estado activo del menú de navegación
+     */
+    updateNavActive() {
+        const clave = Utils.getUrlParam('clave');
+        const navLinks = document.querySelectorAll('.nav__link');
+
+        navLinks.forEach(link => {
+            link.classList.remove('nav__link--active');
+
+            // Si hay clave, no hay enlace activo (estamos viendo un libro específico)
+            // Si no hay clave, marcar "Todas las Frases" como activo
+            if (!clave && link.getAttribute('href') === 'frases.html') {
+                link.classList.add('nav__link--active');
+            }
+        });
+    },
+
+    /**
      * Inicializa la aplicación
      */
     async init() {
         try {
+            // Actualizar el estado activo del menú
+            this.updateNavActive();
+
             // Obtener la clave del libro desde la URL
             const clave = Utils.getUrlParam('clave');
 
