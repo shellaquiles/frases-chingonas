@@ -1,0 +1,34 @@
+/**
+ * Components CSS
+ * Estilos de componentes reutilizables
+ */
+
+/* Card Component */
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+}
+
+.card-phrase {
+  font-size: var(--font-size-phrase);
+  line-height: var(--line-height-phrase);
+  font-weight: var(--font-weight-phrase);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-meta {
+  font-size: var(--font-size-meta);
+  text-align: right;
+  opacity: var(--opacity-meta);
+}

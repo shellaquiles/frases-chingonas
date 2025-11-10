@@ -1,0 +1,352 @@
+[
+  {
+    "clave": "CC",
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Buenas prácticas y estilo de código"
+  },
+  {
+    "clave": "CA",
+    "titulo": "Clean Architecture",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Diseño y separación de responsabilidades"
+  },
+  {
+    "clave": "CCO",
+    "titulo": "The Clean Coder",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Ética y profesionalismo del programador"
+  },
+  {
+    "clave": "CAG",
+    "titulo": "Clean Agile",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Principios ágiles y prácticas limpias"
+  },
+  {
+    "clave": "TPP",
+    "titulo": "The Pragmatic Programmer",
+    "autor": "Andrew Hunt & David Thomas",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Filosofía y prácticas pragmáticas"
+  },
+  {
+    "clave": "RF",
+    "titulo": "Refactoring",
+    "autor": "Martin Fowler",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Mejora continua del diseño del código"
+  },
+  {
+    "clave": "K97",
+    "titulo": "97 Things Every Programmer Should Know",
+    "autor": "Kevlin Henney (ed.)",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Sabiduría colectiva de desarrolladores"
+  },
+  {
+    "clave": "SA",
+    "titulo": "97 Things Every Software Architect Should Know",
+    "autor": "Richard Monson-Haefel (ed.)",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Principios de arquitectura de software"
+  },
+  {
+    "clave": "MM",
+    "titulo": "The Mythical Man-Month",
+    "autor": "Fred Brooks",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Ingeniería de software y gestión"
+  },
+  {
+    "clave": "GOF",
+    "titulo": "Design Patterns",
+    "autor": "Gamma, Helm, Johnson, Vlissides",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Patrones clásicos de diseño orientado a objetos"
+  },
+  {
+    "clave": "DDD",
+    "titulo": "Domain-Driven Design",
+    "autor": "Eric Evans",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Diseño centrado en el dominio"
+  },
+  {
+    "clave": "PEA",
+    "titulo": "Patterns of Enterprise Application Architecture",
+    "autor": "Martin Fowler",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Arquitectura empresarial y patrones"
+  },
+  {
+    "clave": "DEV",
+    "titulo": "The Phoenix Project",
+    "autor": "Gene Kim, Kevin Behr, George Spafford",
+    "categoria": "DevOps y SRE",
+    "tema": "Cultura DevOps y flujo de trabajo"
+  },
+  {
+    "clave": "ACC",
+    "titulo": "Accelerate",
+    "autor": "Nicole Forsgren, Jez Humble, Gene Kim",
+    "categoria": "DevOps y SRE",
+    "tema": "Métricas y prácticas de equipos de alto rendimiento"
+  },
+  {
+    "clave": "SRE",
+    "titulo": "Site Reliability Engineering",
+    "autor": "Google SRE Team",
+    "categoria": "DevOps y SRE",
+    "tema": "Operaciones confiables y escalables"
+  },
+  {
+    "clave": "REL",
+    "titulo": "Release It!",
+    "autor": "Michael Nygard",
+    "categoria": "DevOps y SRE",
+    "tema": "Estabilidad y resiliencia en sistemas"
+  },
+  {
+    "clave": "CD",
+    "titulo": "Continuous Delivery",
+    "autor": "Jez Humble & David Farley",
+    "categoria": "DevOps y SRE",
+    "tema": "Integración, despliegue y automatización continua"
+  },
+  {
+    "clave": "IAC",
+    "titulo": "Infrastructure as Code",
+    "autor": "Kief Morris",
+    "categoria": "DevOps y SRE",
+    "tema": "Automatización de infraestructura"
+  },
+  {
+    "clave": "AUT",
+    "titulo": "The Art of Unit Testing",
+    "autor": "Roy Osherove",
+    "categoria": "Testing y Calidad",
+    "tema": "Pruebas unitarias efectivas"
+  },
+  {
+    "clave": "XUP",
+    "titulo": "xUnit Test Patterns",
+    "autor": "Gerard Meszaros",
+    "categoria": "Testing y Calidad",
+    "tema": "Patrones y estrategias de testing"
+  },
+  {
+    "clave": "GOO",
+    "titulo": "Growing Object-Oriented Software, Guided by Tests",
+    "autor": "Steve Freeman & Nat Pryce",
+    "categoria": "Testing y Calidad",
+    "tema": "Desarrollo guiado por pruebas (TDD)"
+  },
+  {
+    "clave": "BDD",
+    "titulo": "BDD in Action",
+    "autor": "John Ferguson Smart",
+    "categoria": "Testing y Calidad",
+    "tema": "Behavior Driven Development"
+  },
+  {
+    "clave": "TDD",
+    "titulo": "Test-Driven Development: By Example",
+    "autor": "Kent Beck",
+    "categoria": "Testing y Calidad",
+    "tema": "Pruebas como motor de diseño"
+  },
+  {
+    "clave": "C97",
+    "titulo": "97 Things Every Cloud Engineer Should Know",
+    "autor": "Emily Freeman (ed.)",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Prácticas de ingeniería en la nube"
+  },
+  {
+    "clave": "D97",
+    "titulo": "97 Things Every Data Engineer Should Know",
+    "autor": "Tobias Macey (ed.)",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Ingeniería y cultura de datos"
+  },
+  {
+    "clave": "MCS",
+    "titulo": "Building Microservices",
+    "autor": "Sam Newman",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Diseño de microservicios"
+  },
+  {
+    "clave": "MPT",
+    "titulo": "Microservices Patterns",
+    "autor": "Chris Richardson",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Patrones y principios de microservicios"
+  },
+  {
+    "clave": "DDA",
+    "titulo": "Designing Data-Intensive Applications",
+    "autor": "Martin Kleppmann",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Sistemas distribuidos y procesamiento de datos"
+  },
+  {
+    "clave": "EIP",
+    "titulo": "Enterprise Integration Patterns",
+    "autor": "Gregor Hohpe & Bobby Woolf",
+    "categoria": "Cloud, Data & Arquitectura Moderna",
+    "tema": "Integración de sistemas empresariales"
+  },
+  {
+    "clave": "MSP",
+    "titulo": "The Manager’s Path",
+    "autor": "Camille Fournier",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Liderazgo técnico"
+  },
+  {
+    "clave": "EPU",
+    "titulo": "An Elegant Puzzle",
+    "autor": "Will Larson",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Gestión y estructura organizacional"
+  },
+  {
+    "clave": "TT",
+    "titulo": "Team Topologies",
+    "autor": "Matthew Skelton & Manuel Pais",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Diseño organizacional y flujo de valor"
+  },
+  {
+    "clave": "RAD",
+    "titulo": "Radical Candor",
+    "autor": "Kim Scott",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Comunicación efectiva en equipos"
+  },
+  {
+    "clave": "UNP",
+    "titulo": "The Unicorn Project",
+    "autor": "Gene Kim",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Cultura técnica y agilidad organizacional"
+  },
+  {
+    "clave": "DRI",
+    "titulo": "Drive",
+    "autor": "Daniel H. Pink",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Motivación y propósito"
+  },
+  {
+    "clave": "TSS",
+    "titulo": "Turn the Ship Around!",
+    "autor": "L. David Marquet",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Liderazgo descentralizado"
+  },
+  {
+    "clave": "WHH",
+    "titulo": "The Web Application Hacker’s Handbook",
+    "autor": "Dafydd Stuttard & Marcus Pinto",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Seguridad web ofensiva"
+  },
+  {
+    "clave": "SEC",
+    "titulo": "Security Engineering",
+    "autor": "Ross Anderson",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Principios de seguridad de sistemas"
+  },
+  {
+    "clave": "THR",
+    "titulo": "Threat Modeling",
+    "autor": "Adam Shostack",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Análisis y mitigación de amenazas"
+  },
+  {
+    "clave": "CHA",
+    "titulo": "Chaos Engineering",
+    "autor": "Casey Rosenthal & Nora Jones",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Resiliencia ante fallos en sistemas distribuidos"
+  },
+  {
+    "clave": "SSP",
+    "titulo": "Soft Skills",
+    "autor": "John Sonmez",
+    "categoria": "Desarrollo Personal",
+    "tema": "Desarrollo profesional y hábitos"
+  },
+  {
+    "clave": "TPP2",
+    "titulo": "The Passionate Programmer",
+    "autor": "Chad Fowler",
+    "categoria": "Desarrollo Personal",
+    "tema": "Motivación y crecimiento en la carrera"
+  },
+  {
+    "clave": "SSC",
+    "titulo": "The Complete Software Developer’s Career Guide",
+    "autor": "John Sonmez",
+    "categoria": "Desarrollo Personal",
+    "tema": "Guía integral de carrera profesional"
+  },
+  {
+    "clave": "APP",
+    "titulo": "Apprenticeship Patterns",
+    "autor": "Dave Hoover & Adewale Oshineye",
+    "categoria": "Desarrollo Personal",
+    "tema": "Aprendizaje y mentoría técnica"
+  },
+  {
+    "clave": "SEN",
+    "titulo": "The Senior Software Engineer",
+    "autor": "David Copeland",
+    "categoria": "Desarrollo Personal",
+    "tema": "Mentalidad senior y responsabilidad técnica"
+  },
+  {
+    "clave": "DSF",
+    "titulo": "Data Science for Business",
+    "autor": "Foster Provost & Tom Fawcett",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Fundamentos de analítica aplicada"
+  },
+  {
+    "clave": "PDS",
+    "titulo": "Python Data Science Handbook",
+    "autor": "Jake VanderPlas",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Técnicas prácticas en Python"
+  },
+  {
+    "clave": "DML",
+    "titulo": "Deep Learning",
+    "autor": "Ian Goodfellow, Yoshua Bengio & Aaron Courville",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Redes neuronales y aprendizaje profundo"
+  },
+  {
+    "clave": "MLD",
+    "titulo": "Machine Learning Design Patterns",
+    "autor": "Valliappa Lakshmanan, Sara Robinson, Michael Munn",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Diseño de soluciones ML"
+  },
+  {
+    "clave": "DSL",
+    "titulo": "Designing Machine Learning Systems",
+    "autor": "Chip Huyen",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Sistemas de aprendizaje escalables"
+  }
+]

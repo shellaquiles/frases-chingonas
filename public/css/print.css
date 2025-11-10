@@ -1,0 +1,34 @@
+/**
+ * Print CSS
+ * Estilos específicos para impresión
+ */
+
+@media print {
+  @page {
+    size: var(--print-page-size);
+    margin: var(--print-margin);
+  }
+
+  body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
+
+  .card {
+    width: var(--card-width) !important;
+    height: var(--card-height) !important;
+    box-shadow: none;
+    page-break-inside: avoid;
+    margin: 0;
+    padding: var(--card-padding);
+    border-radius: 0;
+    break-inside: avoid;
+    border: var(--print-border);
+  }
+}
