@@ -106,22 +106,26 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    cursor: pointer;
+    min-height: 100%;
+    cursor: pointer !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     user-select: none;
     -webkit-user-select: none;
+    position: relative;
+    z-index: 100;
 }
 
-.frase-content:hover .frase-link {
+.frase-content:hover {
     transform: translateY(-4px);
+    box-shadow: 0 24px 72px rgba(0, 0, 0, 0.35);
 }
 
-.frase-content:active .frase-link {
+.frase-content:active {
     transform: translateY(-2px);
 }
 
 .frase-link * {
-    pointer-events: none;
+    pointer-events: none !important;
     user-select: none;
     -webkit-user-select: none;
 }

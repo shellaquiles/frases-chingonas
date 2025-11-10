@@ -237,27 +237,49 @@ const App = {
         const fraseLinkEl = document.getElementById('frase-link');
         const fraseContent = document.getElementById('frase-content');
 
+        console.log('🔍 updateFraseLink llamado');
+        console.log('fraseLinkEl:', fraseLinkEl);
+        console.log('currentFrase:', AppState.currentFrase);
+
         if (fraseLinkEl && AppState.currentFrase && AppState.currentFrase.clave) {
-            fraseLinkEl.href = `frases.html?clave=${encodeURIComponent(AppState.currentFrase.clave)}`;
+            const url = `frases.html?clave=${encodeURIComponent(AppState.currentFrase.clave)}`;
+            fraseLinkEl.href = url;
             fraseLinkEl.style.pointerEvents = 'auto';
             fraseLinkEl.style.cursor = 'pointer';
 
-            // Agregar event listener si no existe
+            console.log('✅ Enlace configurado:', url);
+            console.log('href actual:', fraseLinkEl.href);
+            console.log('pointer-events:', fraseLinkEl.style.pointerEvents);
+
+            // Agregar event listener para debugging
             if (!fraseLinkEl.hasAttribute('data-listener-added')) {
                 fraseLinkEl.setAttribute('data-listener-added', 'true');
                 fraseLinkEl.addEventListener('click', (e) => {
+                    console.log('🖱️ Click detectado en frase-link');
+                    console.log('Event:', e);
+                    console.log('currentFrase:', AppState.currentFrase);
+
                     if (AppState.currentFrase && AppState.currentFrase.clave) {
-                        // Permitir navegación normal
-                        return true;
+                        const targetUrl = `frases.html?clave=${encodeURIComponent(AppState.currentFrase.clave)}`;
+                        console.log('🚀 Navegando a:', targetUrl);
+                        window.location.href = targetUrl;
+                    } else {
+                        console.log('❌ No hay clave, previniendo default');
+                        e.preventDefault();
                     }
-                    e.preventDefault();
-                    return false;
-                });
+                }, true);
             }
-        } else if (fraseLinkEl) {
-            fraseLinkEl.href = '#';
-            fraseLinkEl.style.pointerEvents = 'none';
-            fraseLinkEl.style.cursor = 'default';
+        } else {
+            console.log('⚠️ No se puede configurar enlace:', {
+                tieneLinkEl: !!fraseLinkEl,
+                tieneFrase: !!AppState.currentFrase,
+                tieneClave: !!(AppState.currentFrase && AppState.currentFrase.clave)
+            });
+            if (fraseLinkEl) {
+                fraseLinkEl.href = '#';
+                fraseLinkEl.style.pointerEvents = 'none';
+                fraseLinkEl.style.cursor = 'default';
+            }
         }
 
         // Agregar hover effect al contenedor

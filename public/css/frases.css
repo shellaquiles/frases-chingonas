@@ -407,7 +407,24 @@ body {
     text-align: center;
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Si es un enlace, tiene cursor pointer */
+.card[href] {
     cursor: pointer;
+}
+
+/* Si NO es un enlace (div), no tiene cursor pointer */
+.card:not([href]) {
+    cursor: default;
+}
+
+.card[href="#"] {
+    cursor: default;
+    pointer-events: none;
 }
 
 .card:hover {
@@ -424,6 +441,9 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0.3cm;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .card-meta {
@@ -431,6 +451,9 @@ body {
     text-align: right;
     opacity: 0.9;
     line-height: 1.5;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 @media (max-width: 1024px) {

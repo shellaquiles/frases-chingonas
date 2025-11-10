@@ -122,31 +122,70 @@ const Renderer = {
             return;
         }
 
+        // Verificar si hay clave en la URL (si estamos viendo un libro específico)
+        const urlClave = Utils.getUrlParam('clave');
+        const isLibroEspecifico = !!urlClave;
+
         // Mezclar las frases de forma aleatoria
         const shuffledFrases = Utils.shuffleArray(frases);
 
         const cardsHtml = shuffledFrases.map((fraseData, index) => {
             const color = Utils.getColorForIndex(index);
 
-            // Si es una frase con información completa (todas las frases)
-            if (fraseData.autor && fraseData.titulo) {
+            // Determinar la clave del libro
+            let clave = null;
+            if (fraseData.clave) {
+                clave = fraseData.clave;
+            } else if (libro && libro.clave) {
+                clave = libro.clave;
+            }
+
+            // Si estamos viendo un libro específico, las tarjetas NO son enlaces
+            if (isLibroEspecifico) {
+                // Si es una frase con información completa
+                if (fraseData.autor && fraseData.titulo) {
+                    return `
+                        <div class="card ${color}" role="listitem">
+                            <div class="card-phrase">${this.escapeHtml(fraseData.frase)}</div>
+                            <div class="card-meta">${this.escapeHtml(fraseData.autor)}<br>${this.escapeHtml(fraseData.titulo)}</div>
+                        </div>
+                    `;
+                }
+
+                // Si es una frase simple (de un libro específico)
+                const autor = libro?.autor || 'Autor desconocido';
+                const fuente = libro?.titulo || 'Libro desconocido';
+
                 return `
                     <div class="card ${color}" role="listitem">
                         <div class="card-phrase">${this.escapeHtml(fraseData.frase)}</div>
-                        <div class="card-meta">${this.escapeHtml(fraseData.autor)}<br>${this.escapeHtml(fraseData.titulo)}</div>
+                        <div class="card-meta">${this.escapeHtml(autor)}<br>${this.escapeHtml(fuente)}</div>
                     </div>
                 `;
             }
 
-            // Si es una frase simple (de un libro específico)
+            // Si NO hay clave en la URL (estamos viendo todas las frases), las tarjetas SÍ son enlaces
+            // Si es una frase con información completa (todas las frases)
+            if (fraseData.autor && fraseData.titulo) {
+                const linkUrl = clave ? `frases.html?clave=${encodeURIComponent(clave)}` : '#';
+                return `
+                    <a href="${linkUrl}" class="card ${color}" role="listitem" data-clave="${clave || ''}">
+                        <div class="card-phrase">${this.escapeHtml(fraseData.frase)}</div>
+                        <div class="card-meta">${this.escapeHtml(fraseData.autor)}<br>${this.escapeHtml(fraseData.titulo)}</div>
+                    </a>
+                `;
+            }
+
+            // Si es una frase simple (de un libro específico) pero estamos viendo todas
             const autor = libro?.autor || 'Autor desconocido';
             const fuente = libro?.titulo || 'Libro desconocido';
+            const linkUrl = clave ? `frases.html?clave=${encodeURIComponent(clave)}` : '#';
 
             return `
-                <div class="card ${color}" role="listitem">
+                <a href="${linkUrl}" class="card ${color}" role="listitem" data-clave="${clave || ''}">
                     <div class="card-phrase">${this.escapeHtml(fraseData.frase)}</div>
                     <div class="card-meta">${this.escapeHtml(autor)}<br>${this.escapeHtml(fuente)}</div>
-                </div>
+                </a>
             `;
         }).join('');
 
