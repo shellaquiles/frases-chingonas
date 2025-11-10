@@ -45,8 +45,8 @@ def libros_to_json(csv_file="libros.csv", json_file="libros.json"):
 
 
 if __name__ == "__main__":
-    # Obtener el directorio base del proyecto (donde está el script)
-    base_dir = Path(__file__).parent
+    # Script está en scripts/, base_dir es el directorio padre (raíz del proyecto)
+    base_dir = Path(__file__).parent.parent
     public_dir = base_dir / "public"
     data_dir = public_dir / "data"
 

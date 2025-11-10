@@ -71,27 +71,41 @@ def split_frases_by_book(
             for row in reader:
                 # Filtrar filas que tienen el encabezado como datos
                 if (
-                    row["id"].lower() == "id"
-                    or row["autor"].lower() == "autor"
-                    or row["fuente"].lower() == "fuente"
+                    row.get("clave", "").lower() == "clave"
+                    or row.get("id", "").lower() == "id"
+                    or row.get("autor", "").lower() == "autor"
+                    or row.get("fuente", "").lower() == "fuente"
                 ):
                     continue
 
-                id_frase = row["id"].strip()
-                frase = row["frase"].strip()
-                autor = row["autor"].strip()
-                fuente = row["fuente"].strip()
+                # Obtener clave e id (nuevo formato) o id completo (formato antiguo)
+                clave = row.get("clave", "").strip()
+                id_num = row.get("id", "").strip()
+
+                # Si no hay clave separada, intentar extraer del id (formato antiguo)
+                if not clave and "id" in row:
+                    id_original = row["id"].strip()
+                    if "-" in id_original:
+                        clave, id_num = id_original.split("-", 1)
+                        clave = clave.strip()
+                        id_num = id_num.strip()
+                    else:
+                        clave = id_original
+                        id_num = ""
+
+                id_completo = f"{clave}-{id_num}" if clave and id_num else clave or id_num
+                frase = row.get("frase", "").strip()
+                autor = row.get("autor", "").strip()
+                fuente = row.get("fuente", "").strip()
 
                 # Intentar identificar el libro de dos formas:
-                # 1. Por el prefijo del ID (ej: CC-001 -> CC)
+                # 1. Por la clave directamente
                 # 2. Por el título en la columna "fuente"
                 libro_clave = None
 
-                # Método 1: Prefijo del ID
-                if "-" in id_frase:
-                    prefijo = id_frase.split("-")[0]
-                    if prefijo in libros_info:
-                        libro_clave = prefijo
+                # Método 1: Usar la clave directamente
+                if clave and clave in libros_info:
+                    libro_clave = clave
 
                 # Método 2: Título en la columna "fuente"
                 if not libro_clave:
@@ -103,7 +117,9 @@ def split_frases_by_book(
                 if libro_clave:
                     frases_por_libro[libro_clave].append(
                         {
-                            "id": id_frase,
+                            "clave": clave,
+                            "id": id_num,
+                            "id_completo": id_completo,
                             "frase": frase,
                             "autor": autor,
                             "fuente": fuente,
@@ -112,7 +128,9 @@ def split_frases_by_book(
                 else:
                     frases_sin_libro.append(
                         {
-                            "id": id_frase,
+                            "clave": clave,
+                            "id": id_num,
+                            "id_completo": id_completo,
                             "frase": frase,
                             "autor": autor,
                             "fuente": fuente,
@@ -153,7 +171,7 @@ def split_frases_by_book(
             # Escribir CSV
             with open(archivo_path, "w", encoding="utf-8", newline="") as f:
                 writer = csv.DictWriter(
-                    f, fieldnames=["id", "frase", "autor", "fuente"]
+                    f, fieldnames=["clave", "id", "frase", "autor", "fuente"]
                 )
                 writer.writeheader()
                 writer.writerows(frases)
@@ -165,7 +183,9 @@ def split_frases_by_book(
     if frases_sin_libro:
         archivo_sin_libro = output_path / "sin_libro_asignado.csv"
         with open(archivo_sin_libro, "w", encoding="utf-8", newline="") as f:
-            writer = csv.DictWriter(f, fieldnames=["id", "frase", "autor", "fuente"])
+            writer = csv.DictWriter(
+                f, fieldnames=["clave", "id", "frase", "autor", "fuente"]
+            )
             writer.writeheader()
             writer.writerows(frases_sin_libro)
         print(f"   ⚠️  sin_libro_asignado.csv: {len(frases_sin_libro)} frases")

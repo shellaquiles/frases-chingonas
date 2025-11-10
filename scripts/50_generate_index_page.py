@@ -63,29 +63,47 @@ def load_frases(csv_file, libros_map, libros_by_titulo):
             for row in reader:
                 # Filtrar filas que tienen el encabezado como datos
                 if (
-                    row["id"].lower() == "id"
-                    or row["autor"].lower() == "autor"
-                    or row["fuente"].lower() == "fuente"
+                    row.get("clave", "").lower() == "clave"
+                    or row.get("id", "").lower() == "id"
+                    or row.get("autor", "").lower() == "autor"
+                    or row.get("fuente", "").lower() == "fuente"
                 ):
                     continue
 
+                # Obtener clave e id (nuevo formato) o id completo (formato antiguo)
+                clave = row.get("clave", "").strip()
+                id_num = row.get("id", "").strip()
+
+                # Si no hay clave separada, intentar extraer del id (formato antiguo)
+                if not clave and "id" in row:
+                    id_original = row["id"].strip()
+                    if "-" in id_original:
+                        clave, id_num = id_original.split("-", 1)
+                        clave = clave.strip()
+                        id_num = id_num.strip()
+                    else:
+                        clave = id_original
+                        id_num = ""
+
                 frase = {
-                    "id": row["id"].strip(),
-                    "frase": row["frase"].strip(),
-                    "autor": row["autor"].strip(),
-                    "fuente": row["fuente"].strip(),
+                    "clave": clave,
+                    "id": id_num,
+                    "id_completo": (
+                        f"{clave}-{id_num}" if clave and id_num else clave or id_num
+                    ),
+                    "frase": row.get("frase", "").strip(),
+                    "autor": row.get("autor", "").strip(),
+                    "fuente": row.get("fuente", "").strip(),
                 }
 
                 # Relacionar con libro
                 libro_clave = None
                 libro_info = None
 
-                # Método 1: Por prefijo del ID (ej: CC-001 -> CC)
-                if "-" in frase["id"]:
-                    prefijo = frase["id"].split("-")[0]
-                    if prefijo in libros_map:
-                        libro_clave = prefijo
-                        libro_info = libros_map[prefijo]
+                # Método 1: Usar la clave directamente
+                if clave and clave in libros_map:
+                    libro_clave = clave
+                    libro_info = libros_map[clave]
 
                 # Método 2: Por título en la columna "fuente"
                 if not libro_info:
@@ -175,9 +193,7 @@ def generate_html(
     categorias_data = [
         {
             "nombre": cat,
-            "libros_count": sum(
-                1 for libro in libros if libro["categoria"] == cat
-            ),
+            "libros_count": sum(1 for libro in libros if libro["categoria"] == cat),
             "frases_count": len(frases_por_categoria.get(cat, [])),
         }
         for cat in categorias
@@ -477,7 +493,8 @@ def generate_html(
 
 def main():
     """Función principal"""
-    base_dir = Path(__file__).parent
+    # Script está en scripts/, base_dir es el directorio padre (raíz del proyecto)
+    base_dir = Path(__file__).parent.parent
     public_dir = base_dir / "public"
     data_dir = public_dir / "data"
 
@@ -496,7 +513,9 @@ def main():
         frases_csv, libros_map, libros_by_titulo
     )
     print(f"   ✅ Cargadas {len(frases)} frases")
-    print(f"   📊 Frases relacionadas con libros: {sum(len(fs) for fs in frases_por_libro.values())}")
+    print(
+        f"   📊 Frases relacionadas con libros: {sum(len(fs) for fs in frases_por_libro.values())}"
+    )
 
     print("\n🔍 Cargando libros enriquecidos (portadas)...")
     enriched_libros = load_enriched_libros(enriched_json)
@@ -521,7 +540,9 @@ def main():
         print(f"   - Frases: {len(frases)}")
         print(f"   - Categorías: {len(set(libro['categoria'] for libro in libros))}")
         print(f"   - Autores: {len(set(libro['autor'] for libro in libros))}")
-        print(f"   - Libros con portadas: {sum(1 for l in enriched_libros.values() if l.get('portada'))}")
+        print(
+            f"   - Libros con portadas: {sum(1 for l in enriched_libros.values() if l.get('portada'))}"
+        )
         print(f"\n🚀 Para ver la página:")
         print(f"   python3 server.py")
         print(f"   O abre: http://localhost:8000/public/index.html")
@@ -532,4 +553,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

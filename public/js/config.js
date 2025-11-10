@@ -18,6 +18,6 @@ export const CONFIG = {
   ERROR_MESSAGES: {
     LOAD_FAILED: 'Error al cargar las frases',
     FILE_NOT_FOUND: 'Asegúrate de que el archivo data/frases.json existe.',
-    GENERATE_JSON: 'Ejecuta: python3 scripts/csv_to_json.py para generar el archivo JSON.'
+    GENERATE_JSON: 'Ejecuta: python3 scripts/20_csv_to_json.py para generar el archivo JSON.'
   }
 };

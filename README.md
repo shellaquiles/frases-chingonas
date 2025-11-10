@@ -18,32 +18,40 @@ Este proyecto es una colección de **frases originales inspiradas** en libros t�
 
 ```
 frases_python/
-├── 📄 Datos principales
+├── 📄 Datos principales (fuentes de verdad)
 │   ├── libros.csv              # Lista de libros con metadatos
 │   └── frases.csv              # Colección de frases
 │
-├── 🐍 Scripts de procesamiento
-│   ├── csv_to_json.py          # Convierte frases.csv a JSON
-│   ├── libros_to_json.py       # Convierte libros.csv a JSON
-│   ├── split_by_book.py        # Separa frases por libro
-│   ├── fetch_book_info.py      # Obtiene info de Open Library API
-│   └── generate_html.py        # Genera la interfaz web
+├── 🐍 Scripts de procesamiento (orden de ejecución)
+│   └── scripts/
+│       ├── 10_split_id_column.py      # Convierte formato de ID (opcional)
+│       ├── 20_csv_to_json.py          # Convierte frases.csv a JSON
+│       ├── 30_libros_to_json.py       # Convierte libros.csv a JSON
+│       ├── 40_fetch_book_info.py      # Obtiene info de Open Library API (opcional)
+│       ├── 50_generate_index_page.py  # Genera página principal con navegación ⭐
+│       ├── 60_split_by_book.py        # Separa frases por libro
+│       ├── 70_generate_html.py        # Genera la interfaz web (versión anterior)
+│       └── 80_test_book_fetch.py      # Script de prueba
 │
 ├── 🌐 Aplicación web
 │   ├── server.py                # Servidor web local
-│   └── public/                  # Archivos estáticos
+│   └── public/                  # Archivos estáticos (para GitHub Pages)
 │       ├── index.html           # Página principal
 │       ├── css/                 # Estilos CSS modulares
 │       ├── js/                  # JavaScript modular (ES6)
-│       └── data/                 # Datos JSON
+│       └── data/                 # Datos JSON (generados)
 │           ├── frases.json      # Frases en formato JSON
 │           ├── libros.json      # Libros en formato JSON
 │           └── categorias.json # Categorías organizadas
 │
 └── 📚 Documentación
     ├── README.md                # Este archivo
-    ├── prompt.md                # Instrucciones para generar frases
-    └── FETCH_BOOKS_README.md    # Guía de uso de Open Library API
+    └── docs/
+        ├── CONTRIBUTING.md      # Guía para colaboradores
+        ├── SETUP.md             # Guía de instalación
+        ├── prompt.md            # Instrucciones para generar frases
+        ├── FETCH_BOOKS_README.md # Guía de uso de Open Library API
+        └── PROYECTO_LISTO.md    # Checklist de preparación
 ```
 
 ## 🚀 Inicio Rápido
@@ -61,15 +69,15 @@ cd frases_python
 
 ```bash
 # Convertir CSV a JSON
-python3 csv_to_json.py
-python3 libros_to_json.py
+python3 scripts/20_csv_to_json.py
+python3 scripts/30_libros_to_json.py
 ```
 
 #### 3. Generar la Interfaz Web
 
 ```bash
 # Generar página principal con navegación
-python3 generate_index_page.py
+python3 scripts/50_generate_index_page.py
 ```
 
 Este script lee directamente desde `libros.csv` y `frases.csv` (fuentes de verdad) y genera la página web completa.
@@ -96,54 +104,70 @@ El proyecto está listo para GitHub Pages. Solo necesitas:
 
 3. **Actualizar la página** cuando agregues nuevas frases:
    ```bash
-   python3 generate_index_page.py
+   python3 scripts/50_generate_index_page.py
    git add public/
    git commit -m "Actualizar página con nuevas frases"
    git push
    ```
 
+### Convertir Formato de ID (Opcional)
+
+Si tienes un `frases.csv` con el formato antiguo (`id` como `PDS-096`), puedes convertirlo al nuevo formato (`clave,id`):
+
+```bash
+# Convertir formato antiguo a nuevo (crea backup automáticamente)
+python3 scripts/10_split_id_column.py
+
+# O especificar archivos personalizados
+python3 scripts/10_split_id_column.py --input frases.csv --output frases_nuevo.csv
+```
+
 ## 📋 Scripts Disponibles
 
-### `csv_to_json.py`
+### `10_split_id_column.py` ⭐ **Primero (si es necesario)**
+Separa la columna `id` en `clave` e `id` en `frases.csv`. Convierte del formato antiguo (`PDS-096`) al nuevo (`PDS,96`).
+
+```bash
+# Convertir formato antiguo a nuevo (crea backup automáticamente)
+python3 scripts/10_split_id_column.py
+
+# Con opciones personalizadas
+python3 scripts/10_split_id_column.py --input frases.csv --output frases_nuevo.csv --no-backup
+```
+
+### `20_csv_to_json.py`
 Convierte `frases.csv` a `public/data/frases.json`
 
 ```bash
-python3 csv_to_json.py [archivo_csv] [archivo_json]
+python3 scripts/20_csv_to_json.py [archivo_csv] [archivo_json]
 ```
 
-### `libros_to_json.py`
+### `30_libros_to_json.py`
 Convierte `libros.csv` a `public/data/libros.json`
 
 ```bash
-python3 libros_to_json.py [archivo_csv] [archivo_json]
+python3 scripts/30_libros_to_json.py [archivo_csv] [archivo_json]
 ```
 
-### `split_by_book.py`
-Separa `frases.csv` en múltiples archivos CSV, uno por cada libro
-
-```bash
-python3 split_by_book.py [frases.csv] [libros.csv] [directorio_salida]
-```
-
-### `fetch_book_info.py`
+### `40_fetch_book_info.py` (Opcional)
 Obtiene información completa de libros desde Open Library API (portadas, ISBN, descripción, etc.)
 
 ```bash
 # Obtener info de todos los libros
-python3 fetch_book_info.py
+python3 scripts/40_fetch_book_info.py
 
 # Con opciones personalizadas
-python3 fetch_book_info.py --csv libros.csv --output libros_completos.json --delay 2.0
+python3 scripts/40_fetch_book_info.py --csv libros.csv --output libros_completos.json --delay 2.0
 ```
 
-Ver [FETCH_BOOKS_README.md](FETCH_BOOKS_README.md) para más detalles.
+Ver [docs/FETCH_BOOKS_README.md](docs/FETCH_BOOKS_README.md) para más detalles.
 
-### `generate_index_page.py` ⭐ **Recomendado**
+### `50_generate_index_page.py` ⭐ **Recomendado - Principal**
 Genera `public/index.html` con sistema de navegación completo. Lee directamente desde `libros.csv` y `frases.csv` (fuentes de verdad).
 
 ```bash
 # Generar página principal con navegación
-python3 generate_index_page.py
+python3 scripts/50_generate_index_page.py
 ```
 
 **Características**:
@@ -152,15 +176,22 @@ python3 generate_index_page.py
 - Filtrado de frases dinámico
 - Compatible con GitHub Pages
 
-### `generate_html.py`
+### `60_split_by_book.py`
+Separa `frases.csv` en múltiples archivos CSV, uno por cada libro
+
+```bash
+python3 scripts/60_split_by_book.py [frases.csv] [libros.csv] [directorio_salida]
+```
+
+### `70_generate_html.py` (Versión anterior)
 Genera `public/index.html` con la interfaz web (versión anterior)
 
 ```bash
 # Modo servidor (usa fetch para cargar JSON)
-python3 generate_html.py
+python3 scripts/70_generate_html.py
 
 # Modo file:// (embebe JSON en el HTML)
-python3 generate_html.py --file
+python3 scripts/70_generate_html.py --file
 ```
 
 ### `server.py`
@@ -178,11 +209,23 @@ python3 server.py 8080
 
 ### Frases (frases.csv)
 
+**Formato actual (recomendado)**:
+```csv
+clave,id,frase,autor,fuente
+DDD,001,"El dominio es el lenguaje que da sentido al software.","Eric Evans","Domain-Driven Design"
+DDD,002,"Una arquitectura saludable refleja una comprensión profunda del dominio, no solo del código.","Eric Evans","Domain-Driven Design"
+```
+
+**Formato antiguo (soportado para compatibilidad)**:
 ```csv
 id,frase,autor,fuente
 DDD-001,"El dominio es el lenguaje que da sentido al software.","Eric Evans","Domain-Driven Design"
-DDD-002,"Una arquitectura saludable refleja una comprensión profunda del dominio, no solo del código.","Eric Evans","Domain-Driven Design"
 ```
+
+> **Nota**: Para convertir del formato antiguo al nuevo, usa:
+> ```bash
+> python3 scripts/10_split_id_column.py
+> ```
 
 ### Libros (libros.csv)
 
@@ -239,7 +282,7 @@ El proyecto usa solo librerías estándar de Python:
 
 ## 📝 Generar Nuevas Frases
 
-Para generar frases inspiradas en un libro, sigue las instrucciones en [prompt.md](prompt.md):
+Para generar frases inspiradas en un libro, sigue las instrucciones en [docs/prompt.md](docs/prompt.md):
 
 1. Usa la información del libro desde `libros.csv`
 2. Sigue las instrucciones de estilo en `prompt.md`
@@ -263,7 +306,7 @@ El proyecto integra la API pública de Open Library para enriquecer la informaci
 - **Descripción**: Resúmenes y descripciones
 - **Metadatos**: Año de publicación, autores, etc.
 
-Ver [FETCH_BOOKS_README.md](FETCH_BOOKS_README.md) para más información.
+Ver [docs/FETCH_BOOKS_README.md](docs/FETCH_BOOKS_README.md) para más información.
 
 ## 📄 Licencia
 
@@ -275,7 +318,7 @@ Ver archivo [LICENSE](LICENSE) para más detalles.
 
 ### Guía Completa para Colaboradores
 
-Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa que incluye:
+Ver [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) para la guía completa que incluye:
 
 - ✅ Cómo clonar y configurar el proyecto
 - ✅ Cómo agregar nuevas frases
@@ -289,10 +332,10 @@ Ver [CONTRIBUTING.md](CONTRIBUTING.md) para la guía completa que incluye:
 
 1. **Fork** el repositorio
 2. **Crea una rama** para tu contribución
-3. **Agrega frases** siguiendo [`prompt.md`](prompt.md)
+3. **Agrega frases** siguiendo [`docs/prompt.md`](docs/prompt.md)
 4. **Prueba** que todo funcione:
    ```bash
-   python3 generate_index_page.py
+   python3 scripts/50_generate_index_page.py
    python3 server.py
    ```
 5. **Commit** y **Push** a tu fork
