@@ -1,0 +1,89 @@
+frases_generadas,clave,titulo,autor,categoria,tema
+✅,ACC,Accelerate,"Nicole Forsgren, Jez Humble, Gene Kim",DevOps y SRE,Métricas y prácticas de equipos de alto rendimiento
+✅,APP,Apprenticeship Patterns,Dave Hoover & Adewale Oshineye,Desarrollo Personal,Aprendizaje y mentoría técnica
+✅,AUT-UT,The Art of Unit Testing,Roy Osherove,Testing y Calidad,Pruebas unitarias efectivas
+✅,AUT,Continuous Delivery,Jez Humble y David Farley,DevOps y SRE,Integración y despliegue continuo
+✅,BDD,BDD in Action,John Ferguson Smart,Testing y Calidad,Behavior Driven Development
+✅,C97,97 Things Every Cloud Engineer Should Know,Emily Freeman (ed.),Cloud, Data & Arquitectura Moderna,Prácticas de ingeniería en la nube
+✅,D97,97 Things Every Data Engineer Should Know,Tobias Macey (ed.),Cloud, Data & Arquitectura Moderna,Ingeniería y cultura de datos
+✅,CA,Clean Architecture,Robert C. Martin,Serie Clean,Diseño y separación de responsabilidades
+✅,CAG,Clean Agile,Robert C. Martin,Serie Clean,Principios ágiles y prácticas limpias
+✅,CC,Clean Code,Robert C. Martin,Serie Clean,Buenas prácticas y estilo de código
+✅,CCO,The Clean Coder,Robert C. Martin,Serie Clean,Ética y profesionalismo del programador
+✅,CHA,Chaos Engineering,Casey Rosenthal & Nora Jones,Seguridad y Resiliencia,Resiliencia ante fallos en sistemas distribuidos
+✅,CSD,The Complete Software Developer’s Career Guide,John Sonmez,Desarrollo Personal,Guía integral de carrera profesional
+✅,DDA,Designing Data-Intensive Applications,Martin Kleppmann,Cloud, Data & Arquitectura Moderna,Sistemas distribuidos y procesamiento de datos
+✅,DDD,Domain-Driven Design,Eric Evans,Clásicos del Desarrollo,Diseño centrado en el dominio
+✅,DEV,The Phoenix Project,Gene Kim, Kevin Behr, George Spafford,DevOps y SRE,Cultura DevOps y flujo de trabajo
+✅,DRI,Drive,Daniel H. Pink,Liderazgo y Cultura,Motivación intrínseca y propósito
+✅,DSF,Data Science for Business,Foster Provost & Tom Fawcett,Ciencia de Datos e IA,Fundamentos de analítica aplicada
+✅,DTL,Dare to Lead,Brené Brown,Liderazgo y Cultura,Valentía, vulnerabilidad y liderazgo humano
+✅,EIP,Enterprise Integration Patterns,Gregor Hohpe & Bobby Woolf,Cloud, Data & Arquitectura Moderna,Integración de sistemas empresariales
+✅,EPU,An Elegant Puzzle,Will Larson,Liderazgo y Cultura,Gobernanza y estructuras de ingeniería
+✅,GOF,Design Patterns,Gamma, Helm, Johnson, Vlissides,Clásicos del Desarrollo,Patrones clásicos de diseño orientado a objetos
+✅,GOO,Growing Object-Oriented Software, Guided by Tests,Steve Freeman & Nat Pryce,Testing y Calidad,Desarrollo guiado por pruebas (TDD)
+✅,IAC,Infrastructure as Code,Kief Morris,DevOps y SRE,Automatización de infraestructura
+✅,K97,97 Things Every Programmer Should Know,Kevlin Henney (ed.),Clásicos del Desarrollo,Sabiduría colectiva de desarrolladores
+✅,LEL,Leaders Eat Last,Simon Sinek,Liderazgo y Cultura,Liderazgo basado en confianza y propósito
+✅,MCS,Building Microservices,Sam Newman,Cloud, Data & Arquitectura Moderna,Diseño de microservicios
+✅,MM,The Mythical Man-Month,Fred Brooks,Clásicos del Desarrollo,Ingeniería de software y gestión
+✅,MPT,Microservices Patterns,Chris Richardson,Cloud, Data & Arquitectura Moderna,Patrones y principios de microservicios
+✅,MSP,The Manager’s Path,Camille Fournier,Liderazgo y Cultura,Liderazgo técnico
+✅,PDS,Python Data Science Handbook,Jake VanderPlas,Ciencia de Datos e IA,Técnicas prácticas en Python
+✅,PEA,Patterns of Enterprise Application Architecture,Martin Fowler,Clásicos del Desarrollo,Arquitectura empresarial y patrones
+✅,RAD,Radical Candor,Kim Scott,Liderazgo y Cultura,Comunicación efectiva en equipos
+✅,REL,Release It!,Michael T. Nygard,DevOps y SRE,Estabilidad y resiliencia en sistemas
+✅,RF,Refactoring,Martin Fowler,Clásicos del Desarrollo,Mejora continua del diseño del código
+✅,SA,97 Things Every Software Architect Should Know,Richard Monson-Haefel (ed.),Clásicos del Desarrollo,Principios de arquitectura de software
+✅,SEC,Security Engineering,Ross Anderson,Seguridad y Resiliencia,Principios de seguridad de sistemas
+✅,SRE,Site Reliability Engineering,Google SRE Team,DevOps y SRE,Operaciones confiables y escalables
+✅,SSC,The Complete Software Developer’s Career Guide,John Sonmez,Desarrollo Personal,Guía integral de carrera profesional
+✅,SSP,Soft Skills,John Sonmez,Desarrollo Personal,Desarrollo profesional y hábitos
+✅,SWW,Start With Why,Simon Sinek,Liderazgo y Cultura,Propósito y visión inspiradora
+✅,TDD,Test-Driven Development: By Example,Kent Beck,Testing y Calidad,Pruebas como motor de diseño
+✅,THR,Threat Modeling,Adam Shostack,Seguridad y Resiliencia,Análisis y mitigación de amenazas
+✅,TIG,The Infinite Game,Simon Sinek,Liderazgo y Cultura,Mentalidad infinita y sostenibilidad organizacional
+✅,TPP,The Pragmatic Programmer,Andrew Hunt & David Thomas,Clásicos del Desarrollo,Filosofía y prácticas pragmáticas
+✅,TPP2,The Passionate Programmer,Chad Fowler,Desarrollo Personal,Motivación y crecimiento profesional
+✅,TSS,Turn the Ship Around!,L. David Marquet,Liderazgo y Cultura,Liderazgo descentralizado
+✅,TT,Team Topologies,Matthew Skelton & Manuel Pais,Liderazgo y Cultura,Diseño organizacional y flujo de valor
+✅,UNP,The Unicorn Project,Gene Kim,Liderazgo y Cultura,Cultura técnica y agilidad organizacional
+✅,WHH,The Web Application Hacker’s Handbook,Dafydd Stuttard & Marcus Pinto,Seguridad y Resiliencia,Seguridad web ofensiva
+✅,XUP,xUnit Test Patterns,Gerard Meszaros,Testing y Calidad,Patrones y estrategias de testing
+❌,AHB,Atomic Habits,James Clear,Desarrollo Personal y Pensamiento Profesional,Microhábitos y mejora continua
+❌,ASC,The Art of Scalability,Abbott & Fisher,Infraestructura, DevOps y Cloud,Escalabilidad de sistemas y organizaciones
+❌,BLC,Beyond Legacy Code,David Scott Bernstein,Refactoring, Legado y Mantenimiento,Prácticas sostenibles de desarrollo
+❌,BTH,Blue Team Handbook,Don Murdoch,Seguridad, Redes y Privacidad,Defensa y respuesta a incidentes
+❌,CAP,Continuous Architecture in Practice,Murat Erder & Pierre Pureur,Ingeniería de Software Avanzada,Arquitectura adaptable y evolución continua
+❌,CCR,Clean Craftsmanship,Robert C. Martin,Serie Clean,Disciplina y principios maestros de desarrollo
+❌,CNI,Cloud Native Infrastructure,Justin Garrison & Kris Nova,Infraestructura, DevOps y Cloud,Infraestructura nativa en la nube
+❌,CTD,Continuous Testing for DevOps Professionals,Katrina Clokie,Testing, Observabilidad y Calidad,Pruebas continuas y automatización
+❌,CTK,Computational Thinking,Jeannette Wing,Fundamentos de la Computación y Teoría,Pensamiento computacional
+❌,CTM,Concepts, Techniques, and Models of Computer Programming,Peter Van Roy & Seif Haridi,Fundamentos de la Computación y Teoría,Paradigmas de programación y modelos de cómputo
+❌,CUE,The Cuckoo’s Egg,Clifford Stoll,Seguridad, Redes y Privacidad,Historia y ética del hacking
+❌,DWK,Deep Work,Cal Newport,Desarrollo Personal y Pensamiento Profesional,Concentración y trabajo sin distracciones
+❌,GEB,Gödel, Escher, Bach: An Eternal Golden Braid,Douglas Hofstadter,Fundamentos de la Computación y Teoría,Relación entre mente, arte y sistemas formales
+❌,HGT,How Google Tests Software,Whittaker, Arbon & Carollo,Testing, Observabilidad y Calidad,Estrategias de testing a gran escala
+❌,KUR,Kubernetes Up and Running,Brendan Burns, Joe Beda, Kelsey Hightower,Infraestructura, DevOps y Cloud,Despliegue y operación de Kubernetes
+❌,MAS,Mastery,Robert Greene,Desarrollo Personal y Pensamiento Profesional,Aprendizaje deliberado y maestría
+❌,MND,Mindset: The New Psychology of Success,Carol Dweck,Desarrollo Personal y Pensamiento Profesional,Mentalidad de crecimiento
+❌,OBE,Observability Engineering,Charity Majors, Liz Fong-Jones, George Miranda,Testing, Observabilidad y Calidad,Ingeniería de observabilidad moderna
+❌,PKU,Production Kubernetes,Josh Rosso, Rich Lander, Alex Brand,Infraestructura, DevOps y Cloud,Optimización de clústeres Kubernetes
+❌,PMA,Practical Malware Analysis,Sikorski & Honig,Seguridad, Redes y Privacidad,Análisis de malware
+❌,PMO,Practical Monitoring,Mike Julian,Testing, Observabilidad y Calidad,Monitoreo efectivo y observabilidad
+❌,PSD,A Philosophy of Software Design,John Ousterhout,Ingeniería de Software Avanzada,Principios de diseño y complejidad accidental
+❌,RFP,Refactoring to Patterns,Joshua Kerievsky,Refactoring, Legado y Mantenimiento,Refactorización mediante patrones de diseño
+❌,SCR,Serious Cryptography,Jean-Philippe Aumasson,Seguridad, Redes y Privacidad,Criptografía moderna aplicada
+❌,SDX,Software Design X-Rays,Adam Tornhill,Ingeniería de Software Avanzada,Visualización y diagnóstico de calidad de código
+❌,SGI,So Good They Can’t Ignore You,Cal Newport,Desarrollo Personal y Pensamiento Profesional,Habilidades y rareza como ventaja
+❌,SH7,The 7 Habits of Highly Effective People,Stephen R. Covey,Desarrollo Personal y Pensamiento Profesional,Hábito y efectividad personal
+❌,SIC,Structure and Interpretation of Classical Mechanics,Sussman & Wisdom,Fundamentos de la Computación y Teoría,Sistemas dinámicos y formalismo computacional
+❌,SRW,The Site Reliability Workbook,Betsy Beyer et al.,Infraestructura, DevOps y Cloud,Prácticas operativas avanzadas de confiabilidad
+❌,TAO,The Art of Computer Programming,Donald Knuth,Fundamentos de la Computación y Teoría,Algoritmos y matemáticas del cómputo
+❌,TDT,Technical Debt,Neil Ernst & Philippe Kruchten,Refactoring, Legado y Mantenimiento,Gestión y análisis de deuda técnica
+❌,TPP20,The Pragmatic Programmer: 20th Anniversary Edition,Hunt & Thomas,Ingeniería de Software Avanzada,Actualización de principios pragmáticos
+❌,TTW,The Tangled Web,Michal Zalewski,Seguridad, Redes y Privacidad,Seguridad de aplicaciones web modernas
+❌,TUR,Terraform: Up and Running,Yevgeniy Brikman,Infraestructura, DevOps y Cloud,Automatización con Terraform
+❌,WLC,Working Effectively with Legacy Code,Michael Feathers,Refactoring, Legado y Mantenimiento,Manejo y modernización de sistemas heredados
+❌,WOA,The War of Art,Steven Pressfield,Desarrollo Personal y Pensamiento Profesional,Disciplina creativa y superación de bloqueos
+❌,YCS,Your Code as a Crime Scene,Adam Tornhill,Ingeniería de Software Avanzada,Análisis de comportamiento del código

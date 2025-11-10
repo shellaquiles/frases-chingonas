@@ -1,0 +1,706 @@
+[
+  {
+    "frases_generadas": "✅",
+    "clave": "ACC",
+    "titulo": "Accelerate",
+    "autor": "Nicole Forsgren, Jez Humble, Gene Kim",
+    "categoria": "DevOps y SRE",
+    "tema": "Métricas y prácticas de equipos de alto rendimiento"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "APP",
+    "titulo": "Apprenticeship Patterns",
+    "autor": "Dave Hoover & Adewale Oshineye",
+    "categoria": "Desarrollo Personal",
+    "tema": "Aprendizaje y mentoría técnica"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "AUT-UT",
+    "titulo": "The Art of Unit Testing",
+    "autor": "Roy Osherove",
+    "categoria": "Testing y Calidad",
+    "tema": "Pruebas unitarias efectivas"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "AUT",
+    "titulo": "Continuous Delivery",
+    "autor": "Jez Humble y David Farley",
+    "categoria": "DevOps y SRE",
+    "tema": "Integración y despliegue continuo"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "BDD",
+    "titulo": "BDD in Action",
+    "autor": "John Ferguson Smart",
+    "categoria": "Testing y Calidad",
+    "tema": "Behavior Driven Development"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "C97",
+    "titulo": "97 Things Every Cloud Engineer Should Know",
+    "autor": "Emily Freeman (ed.)",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "D97",
+    "titulo": "97 Things Every Data Engineer Should Know",
+    "autor": "Tobias Macey (ed.)",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CA",
+    "titulo": "Clean Architecture",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Diseño y separación de responsabilidades"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CAG",
+    "titulo": "Clean Agile",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Principios ágiles y prácticas limpias"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CC",
+    "titulo": "Clean Code",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Buenas prácticas y estilo de código"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CCO",
+    "titulo": "The Clean Coder",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Ética y profesionalismo del programador"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CHA",
+    "titulo": "Chaos Engineering",
+    "autor": "Casey Rosenthal & Nora Jones",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Resiliencia ante fallos en sistemas distribuidos"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "CSD",
+    "titulo": "The Complete Software Developer’s Career Guide",
+    "autor": "John Sonmez",
+    "categoria": "Desarrollo Personal",
+    "tema": "Guía integral de carrera profesional"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DDA",
+    "titulo": "Designing Data-Intensive Applications",
+    "autor": "Martin Kleppmann",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DDD",
+    "titulo": "Domain-Driven Design",
+    "autor": "Eric Evans",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Diseño centrado en el dominio"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DEV",
+    "titulo": "The Phoenix Project",
+    "autor": "Gene Kim",
+    "categoria": " Kevin Behr",
+    "tema": " George Spafford"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DRI",
+    "titulo": "Drive",
+    "autor": "Daniel H. Pink",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Motivación intrínseca y propósito"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DSF",
+    "titulo": "Data Science for Business",
+    "autor": "Foster Provost & Tom Fawcett",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Fundamentos de analítica aplicada"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "DTL",
+    "titulo": "Dare to Lead",
+    "autor": "Brené Brown",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Valentía"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "EIP",
+    "titulo": "Enterprise Integration Patterns",
+    "autor": "Gregor Hohpe & Bobby Woolf",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "EPU",
+    "titulo": "An Elegant Puzzle",
+    "autor": "Will Larson",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Gobernanza y estructuras de ingeniería"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "GOF",
+    "titulo": "Design Patterns",
+    "autor": "Gamma",
+    "categoria": " Helm",
+    "tema": " Johnson"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "GOO",
+    "titulo": "Growing Object-Oriented Software",
+    "autor": " Guided by Tests",
+    "categoria": "Steve Freeman & Nat Pryce",
+    "tema": "Testing y Calidad"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "IAC",
+    "titulo": "Infrastructure as Code",
+    "autor": "Kief Morris",
+    "categoria": "DevOps y SRE",
+    "tema": "Automatización de infraestructura"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "K97",
+    "titulo": "97 Things Every Programmer Should Know",
+    "autor": "Kevlin Henney (ed.)",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Sabiduría colectiva de desarrolladores"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "LEL",
+    "titulo": "Leaders Eat Last",
+    "autor": "Simon Sinek",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Liderazgo basado en confianza y propósito"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "MCS",
+    "titulo": "Building Microservices",
+    "autor": "Sam Newman",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "MM",
+    "titulo": "The Mythical Man-Month",
+    "autor": "Fred Brooks",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Ingeniería de software y gestión"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "MPT",
+    "titulo": "Microservices Patterns",
+    "autor": "Chris Richardson",
+    "categoria": "Cloud",
+    "tema": " Data & Arquitectura Moderna"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "MSP",
+    "titulo": "The Manager’s Path",
+    "autor": "Camille Fournier",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Liderazgo técnico"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "PDS",
+    "titulo": "Python Data Science Handbook",
+    "autor": "Jake VanderPlas",
+    "categoria": "Ciencia de Datos e IA",
+    "tema": "Técnicas prácticas en Python"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "PEA",
+    "titulo": "Patterns of Enterprise Application Architecture",
+    "autor": "Martin Fowler",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Arquitectura empresarial y patrones"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "RAD",
+    "titulo": "Radical Candor",
+    "autor": "Kim Scott",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Comunicación efectiva en equipos"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "REL",
+    "titulo": "Release It!",
+    "autor": "Michael T. Nygard",
+    "categoria": "DevOps y SRE",
+    "tema": "Estabilidad y resiliencia en sistemas"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "RF",
+    "titulo": "Refactoring",
+    "autor": "Martin Fowler",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Mejora continua del diseño del código"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SA",
+    "titulo": "97 Things Every Software Architect Should Know",
+    "autor": "Richard Monson-Haefel (ed.)",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Principios de arquitectura de software"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SEC",
+    "titulo": "Security Engineering",
+    "autor": "Ross Anderson",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Principios de seguridad de sistemas"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SRE",
+    "titulo": "Site Reliability Engineering",
+    "autor": "Google SRE Team",
+    "categoria": "DevOps y SRE",
+    "tema": "Operaciones confiables y escalables"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SSC",
+    "titulo": "The Complete Software Developer’s Career Guide",
+    "autor": "John Sonmez",
+    "categoria": "Desarrollo Personal",
+    "tema": "Guía integral de carrera profesional"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SSP",
+    "titulo": "Soft Skills",
+    "autor": "John Sonmez",
+    "categoria": "Desarrollo Personal",
+    "tema": "Desarrollo profesional y hábitos"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "SWW",
+    "titulo": "Start With Why",
+    "autor": "Simon Sinek",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Propósito y visión inspiradora"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TDD",
+    "titulo": "Test-Driven Development: By Example",
+    "autor": "Kent Beck",
+    "categoria": "Testing y Calidad",
+    "tema": "Pruebas como motor de diseño"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "THR",
+    "titulo": "Threat Modeling",
+    "autor": "Adam Shostack",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Análisis y mitigación de amenazas"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TIG",
+    "titulo": "The Infinite Game",
+    "autor": "Simon Sinek",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Mentalidad infinita y sostenibilidad organizacional"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TPP",
+    "titulo": "The Pragmatic Programmer",
+    "autor": "Andrew Hunt & David Thomas",
+    "categoria": "Clásicos del Desarrollo",
+    "tema": "Filosofía y prácticas pragmáticas"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TPP2",
+    "titulo": "The Passionate Programmer",
+    "autor": "Chad Fowler",
+    "categoria": "Desarrollo Personal",
+    "tema": "Motivación y crecimiento profesional"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TSS",
+    "titulo": "Turn the Ship Around!",
+    "autor": "L. David Marquet",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Liderazgo descentralizado"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "TT",
+    "titulo": "Team Topologies",
+    "autor": "Matthew Skelton & Manuel Pais",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Diseño organizacional y flujo de valor"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "UNP",
+    "titulo": "The Unicorn Project",
+    "autor": "Gene Kim",
+    "categoria": "Liderazgo y Cultura",
+    "tema": "Cultura técnica y agilidad organizacional"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "WHH",
+    "titulo": "The Web Application Hacker’s Handbook",
+    "autor": "Dafydd Stuttard & Marcus Pinto",
+    "categoria": "Seguridad y Resiliencia",
+    "tema": "Seguridad web ofensiva"
+  },
+  {
+    "frases_generadas": "✅",
+    "clave": "XUP",
+    "titulo": "xUnit Test Patterns",
+    "autor": "Gerard Meszaros",
+    "categoria": "Testing y Calidad",
+    "tema": "Patrones y estrategias de testing"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "AHB",
+    "titulo": "Atomic Habits",
+    "autor": "James Clear",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Microhábitos y mejora continua"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "ASC",
+    "titulo": "The Art of Scalability",
+    "autor": "Abbott & Fisher",
+    "categoria": "Infraestructura",
+    "tema": " DevOps y Cloud"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "BLC",
+    "titulo": "Beyond Legacy Code",
+    "autor": "David Scott Bernstein",
+    "categoria": "Refactoring",
+    "tema": " Legado y Mantenimiento"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "BTH",
+    "titulo": "Blue Team Handbook",
+    "autor": "Don Murdoch",
+    "categoria": "Seguridad",
+    "tema": " Redes y Privacidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CAP",
+    "titulo": "Continuous Architecture in Practice",
+    "autor": "Murat Erder & Pierre Pureur",
+    "categoria": "Ingeniería de Software Avanzada",
+    "tema": "Arquitectura adaptable y evolución continua"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CCR",
+    "titulo": "Clean Craftsmanship",
+    "autor": "Robert C. Martin",
+    "categoria": "Serie Clean",
+    "tema": "Disciplina y principios maestros de desarrollo"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CNI",
+    "titulo": "Cloud Native Infrastructure",
+    "autor": "Justin Garrison & Kris Nova",
+    "categoria": "Infraestructura",
+    "tema": " DevOps y Cloud"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CTD",
+    "titulo": "Continuous Testing for DevOps Professionals",
+    "autor": "Katrina Clokie",
+    "categoria": "Testing",
+    "tema": " Observabilidad y Calidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CTK",
+    "titulo": "Computational Thinking",
+    "autor": "Jeannette Wing",
+    "categoria": "Fundamentos de la Computación y Teoría",
+    "tema": "Pensamiento computacional"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CTM",
+    "titulo": "Concepts",
+    "autor": " Techniques",
+    "categoria": " and Models of Computer Programming",
+    "tema": "Peter Van Roy & Seif Haridi"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "CUE",
+    "titulo": "The Cuckoo’s Egg",
+    "autor": "Clifford Stoll",
+    "categoria": "Seguridad",
+    "tema": " Redes y Privacidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "DWK",
+    "titulo": "Deep Work",
+    "autor": "Cal Newport",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Concentración y trabajo sin distracciones"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "GEB",
+    "titulo": "Gödel",
+    "autor": " Escher",
+    "categoria": " Bach: An Eternal Golden Braid",
+    "tema": "Douglas Hofstadter"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "HGT",
+    "titulo": "How Google Tests Software",
+    "autor": "Whittaker",
+    "categoria": " Arbon & Carollo",
+    "tema": "Testing"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "KUR",
+    "titulo": "Kubernetes Up and Running",
+    "autor": "Brendan Burns",
+    "categoria": " Joe Beda",
+    "tema": " Kelsey Hightower"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "MAS",
+    "titulo": "Mastery",
+    "autor": "Robert Greene",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Aprendizaje deliberado y maestría"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "MND",
+    "titulo": "Mindset: The New Psychology of Success",
+    "autor": "Carol Dweck",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Mentalidad de crecimiento"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "OBE",
+    "titulo": "Observability Engineering",
+    "autor": "Charity Majors",
+    "categoria": " Liz Fong-Jones",
+    "tema": " George Miranda"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "PKU",
+    "titulo": "Production Kubernetes",
+    "autor": "Josh Rosso",
+    "categoria": " Rich Lander",
+    "tema": " Alex Brand"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "PMA",
+    "titulo": "Practical Malware Analysis",
+    "autor": "Sikorski & Honig",
+    "categoria": "Seguridad",
+    "tema": " Redes y Privacidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "PMO",
+    "titulo": "Practical Monitoring",
+    "autor": "Mike Julian",
+    "categoria": "Testing",
+    "tema": " Observabilidad y Calidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "PSD",
+    "titulo": "A Philosophy of Software Design",
+    "autor": "John Ousterhout",
+    "categoria": "Ingeniería de Software Avanzada",
+    "tema": "Principios de diseño y complejidad accidental"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "RFP",
+    "titulo": "Refactoring to Patterns",
+    "autor": "Joshua Kerievsky",
+    "categoria": "Refactoring",
+    "tema": " Legado y Mantenimiento"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SCR",
+    "titulo": "Serious Cryptography",
+    "autor": "Jean-Philippe Aumasson",
+    "categoria": "Seguridad",
+    "tema": " Redes y Privacidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SDX",
+    "titulo": "Software Design X-Rays",
+    "autor": "Adam Tornhill",
+    "categoria": "Ingeniería de Software Avanzada",
+    "tema": "Visualización y diagnóstico de calidad de código"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SGI",
+    "titulo": "So Good They Can’t Ignore You",
+    "autor": "Cal Newport",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Habilidades y rareza como ventaja"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SH7",
+    "titulo": "The 7 Habits of Highly Effective People",
+    "autor": "Stephen R. Covey",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Hábito y efectividad personal"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SIC",
+    "titulo": "Structure and Interpretation of Classical Mechanics",
+    "autor": "Sussman & Wisdom",
+    "categoria": "Fundamentos de la Computación y Teoría",
+    "tema": "Sistemas dinámicos y formalismo computacional"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "SRW",
+    "titulo": "The Site Reliability Workbook",
+    "autor": "Betsy Beyer et al.",
+    "categoria": "Infraestructura",
+    "tema": " DevOps y Cloud"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "TAO",
+    "titulo": "The Art of Computer Programming",
+    "autor": "Donald Knuth",
+    "categoria": "Fundamentos de la Computación y Teoría",
+    "tema": "Algoritmos y matemáticas del cómputo"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "TDT",
+    "titulo": "Technical Debt",
+    "autor": "Neil Ernst & Philippe Kruchten",
+    "categoria": "Refactoring",
+    "tema": " Legado y Mantenimiento"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "TPP20",
+    "titulo": "The Pragmatic Programmer: 20th Anniversary Edition",
+    "autor": "Hunt & Thomas",
+    "categoria": "Ingeniería de Software Avanzada",
+    "tema": "Actualización de principios pragmáticos"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "TTW",
+    "titulo": "The Tangled Web",
+    "autor": "Michal Zalewski",
+    "categoria": "Seguridad",
+    "tema": " Redes y Privacidad"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "TUR",
+    "titulo": "Terraform: Up and Running",
+    "autor": "Yevgeniy Brikman",
+    "categoria": "Infraestructura",
+    "tema": " DevOps y Cloud"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "WLC",
+    "titulo": "Working Effectively with Legacy Code",
+    "autor": "Michael Feathers",
+    "categoria": "Refactoring",
+    "tema": " Legado y Mantenimiento"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "WOA",
+    "titulo": "The War of Art",
+    "autor": "Steven Pressfield",
+    "categoria": "Desarrollo Personal y Pensamiento Profesional",
+    "tema": "Disciplina creativa y superación de bloqueos"
+  },
+  {
+    "frases_generadas": "❌",
+    "clave": "YCS",
+    "titulo": "Your Code as a Crime Scene",
+    "autor": "Adam Tornhill",
+    "categoria": "Ingeniería de Software Avanzada",
+    "tema": "Análisis de comportamiento del código"
+  }
+]
