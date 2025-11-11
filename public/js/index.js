@@ -2,6 +2,9 @@
  * Página principal - Muestra una frase aleatoria a pantalla completa
  */
 
+import { escapeHtml, randomElement } from './utils.js';
+import { loadBooks, loadFrases } from './api.js';
+
 // ============================================
 // Estado de la aplicación
 // ============================================
@@ -11,70 +14,19 @@ const AppState = {
 };
 
 // ============================================
-// Utilidades
+// Utilidades locales
 // ============================================
 const Utils = {
-    /**
-     * Obtiene un número aleatorio entre min y max (inclusive)
-     */
-    randomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    },
-
-    /**
-     * Selecciona un elemento aleatorio de un array
-     */
-    randomElement(array) {
-        if (array.length === 0) return null;
-        return array[this.randomInt(0, array.length - 1)];
-    },
-
-    /**
-     * Escapa HTML para prevenir XSS
-     */
-    escapeHtml(text) {
-        if (!text) return '';
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
+    escapeHtml,
+    randomElement
 };
 
 // ============================================
 // API de datos
 // ============================================
 const API = {
-    /**
-     * Carga los libros desde el archivo JSON
-     */
-    async loadBooks() {
-        try {
-            const response = await fetch('data/libros.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error cargando libros:', error);
-            throw error;
-        }
-    },
-
-    /**
-     * Carga las frases desde el archivo JSON
-     */
-    async loadFrases() {
-        try {
-            const response = await fetch('data/frases.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error cargando frases:', error);
-            throw error;
-        }
-    }
+    loadBooks,
+    loadFrases
 };
 
 // ============================================

@@ -4,14 +4,9 @@
  * Muestra las frases en tarjetas con colores rotativos
  */
 
-// ============================================
-// Paleta de colores
-// ============================================
-const COLOR_PALETTE = [
-    'verde', 'azul', 'amarillo', 'morado', 'rojo', 'gris',
-    'naranja', 'turquesa', 'menta', 'lila', 'mostaza', 'grafito',
-    'cian', 'magenta', 'cafe', 'blanco'
-];
+import { loadBooks, loadFrases } from './api.js';
+import { COLOR_PALETTE } from './constants.js';
+import { escapeHtml, getColorForIndex, getUrlParam, shuffleArray } from './utils.js';
 
 // ============================================
 // Estado de la aplicación
@@ -24,82 +19,21 @@ const AppState = {
 };
 
 // ============================================
-// Utilidades
+// Utilidades locales
 // ============================================
 const Utils = {
-    /**
-     * Obtiene el parámetro de la URL
-     */
-    getUrlParam(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-    },
-
-    /**
-     * Mezcla un array de forma aleatoria (Fisher-Yates shuffle)
-     */
-    shuffleArray(array) {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-    },
-
-    /**
-     * Escapa HTML para prevenir XSS
-     */
-    escapeHtml(text) {
-        if (!text) return '';
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    },
-
-    /**
-     * Obtiene el color de la paleta para un índice
-     */
-    getColorForIndex(index) {
-        return COLOR_PALETTE[index % COLOR_PALETTE.length];
-    }
+    getUrlParam,
+    shuffleArray,
+    escapeHtml,
+    getColorForIndex: (index) => getColorForIndex(index, COLOR_PALETTE)
 };
 
 // ============================================
 // API de datos
 // ============================================
 const API = {
-    /**
-     * Carga los libros desde el archivo JSON
-     */
-    async loadBooks() {
-        try {
-            const response = await fetch('data/libros.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error cargando libros:', error);
-            throw error;
-        }
-    },
-
-    /**
-     * Carga las frases desde el archivo JSON
-     */
-    async loadFrases() {
-        try {
-            const response = await fetch('data/frases.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error cargando frases:', error);
-            throw error;
-        }
-    }
+    loadBooks,
+    loadFrases
 };
 
 // ============================================

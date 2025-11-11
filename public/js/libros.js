@@ -4,6 +4,9 @@
  * búsqueda, filtrado y visualización detallada
  */
 
+import { normalizeText, formatYear, truncate, debounce } from './utils.js';
+import { loadBooks, loadFrases } from './api.js';
+
 // ============================================
 // Estado de la aplicación
 // ============================================
@@ -18,83 +21,26 @@ const AppState = {
 };
 
 // ============================================
-// Utilidades
+// Utilidades locales
 // ============================================
 const Utils = {
-    /**
-     * Normaliza texto para búsqueda (elimina acentos, convierte a minúsculas)
-     */
-    normalizeText(text) {
-        return text
-            .toLowerCase()
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '');
-    },
-
-    /**
-     * Formatea el año de publicación
-     */
-    formatYear(year) {
-        if (!year) return 'N/A';
-        return Math.floor(year).toString();
-    },
-
-    /**
-     * Trunca texto a una longitud máxima
-     */
-    truncate(text, maxLength = 100) {
-        if (!text || text.length <= maxLength) return text;
-        return text.substring(0, maxLength) + '...';
-    },
-
-    /**
-     * Debounce para optimizar búsquedas
-     */
-    debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
+    normalizeText,
+    formatYear,
+    truncate,
+    debounce
 };
 
 // ============================================
 // API de datos
 // ============================================
 const BooksAPI = {
-    /**
-     * Carga los libros desde el archivo JSON
-     */
     async loadBooks() {
-        try {
-            const response = await fetch('data/libros.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const books = await response.json();
-            return books;
-        } catch (error) {
-            console.error('Error cargando libros:', error);
-            throw error;
-        }
+        return await loadBooks();
     },
 
-    /**
-     * Carga las frases desde el archivo JSON
-     */
     async loadFrases() {
         try {
-            const response = await fetch('data/frases.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const frases = await response.json();
-            return frases;
+            return await loadFrases();
         } catch (error) {
             console.error('Error cargando frases:', error);
             // No lanzar error, simplemente retornar objeto vacío
