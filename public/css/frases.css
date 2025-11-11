@@ -1,0 +1,959 @@
+/* ============================================
+   Estilos específicos de frases.html
+   ============================================ */
+
+/* Estilos del body específicos para esta página */
+body {
+    background: #f5f5f5;
+    padding-top: 70px; /* Espacio para el menú fijo */
+}
+
+/* ============================================
+   Top Navigation (Fixed Menu)
+   ============================================ */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.nav__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    gap: var(--spacing-lg);
+}
+
+.nav__logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-gray-900);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: transform 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav__logo:hover {
+    transform: scale(1.05);
+    color: #667eea;
+}
+
+.nav__links {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav__link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-gray-700);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    border-radius: var(--border-radius-md);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+.nav__link:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+    transform: translateY(-1px);
+}
+
+.nav__link--active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.nav__link--active:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8f 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive: Menú en móviles */
+@media (max-width: 640px) {
+    body {
+        padding-top: 60px;
+    }
+
+    .nav__content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--spacing-sm) 0;
+        gap: var(--spacing-sm);
+    }
+
+    .nav__logo {
+        font-size: 1.125rem;
+    }
+
+    .nav__links {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav__link {
+        flex: 1;
+        text-align: center;
+        font-size: 0.875rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-lg) 0;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--spacing-md) 0;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header__content {
+    position: relative;
+    z-index: 1;
+}
+
+.header__text {
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.header__subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+}
+
+.header__count {
+    font-size: 1rem;
+    opacity: 0.85;
+    font-weight: 500;
+}
+
+/* ============================================
+   Book Info Card (Modern Design)
+   ============================================ */
+.header__book-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--spacing-2xl);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    padding: var(--spacing-2xl);
+    border-radius: 24px;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+    color: var(--color-gray-900);
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header__cover {
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.header__cover:hover {
+    transform: scale(1.02);
+}
+
+.header__book-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    min-width: 0;
+}
+
+.header__book-header {
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.header__book-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+    color: var(--color-gray-900);
+    letter-spacing: -0.01em;
+}
+
+.header__book-author {
+    font-size: 1.125rem;
+    color: var(--color-gray-600);
+    font-weight: 500;
+}
+
+.header__book-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-gray-700);
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.header__book-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
+}
+
+.header__book-meta span {
+    background: var(--color-gray-100);
+    color: var(--color-gray-700);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid var(--color-gray-200);
+    transition: all 0.2s ease;
+}
+
+.header__book-meta span:hover {
+    background: var(--color-gray-200);
+    transform: translateY(-1px);
+}
+
+.header__book-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.header__book-tema {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    font-style: italic;
+    flex: 1;
+    min-width: 200px;
+    line-height: 1.5;
+}
+
+.header__book-info .header__count {
+    font-size: 1.125rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+    .header__title {
+        font-size: 3rem;
+    }
+
+    .header__book-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__title {
+        font-size: 1.75rem;
+    }
+
+    .header__subtitle {
+        font-size: 1rem;
+    }
+
+    .header__book-info {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
+        border-radius: 16px;
+        margin: 0 var(--spacing-sm);
+    }
+
+    .header__cover {
+        width: 100px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .header__book-details {
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+
+    .header__book-header {
+        text-align: center;
+        padding-bottom: var(--spacing-md);
+    }
+
+    .header__book-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .header__book-author {
+        font-size: 1rem;
+    }
+
+    .header__book-description {
+        font-size: 0.9375rem;
+        padding: var(--spacing-md);
+        line-height: 1.6;
+    }
+
+    .header__book-meta {
+        justify-content: center;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .header__book-meta span {
+        font-size: 0.8125rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .header__book-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-top: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .header__book-tema {
+        text-align: center;
+        font-size: 0.875rem;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header__book-info .header__count {
+        font-size: 1rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .header__subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .header__book-info {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .header__cover {
+        width: 80px;
+        height: 120px;
+    }
+
+    .header__book-title {
+        font-size: 1.25rem;
+    }
+
+    .header__book-author {
+        font-size: 0.9375rem;
+    }
+
+    .header__book-description {
+        font-size: 0.875rem;
+        padding: var(--spacing-sm);
+        line-height: 1.5;
+    }
+
+    .header__book-meta span {
+        font-size: 0.75rem;
+        padding: 0.25rem var(--spacing-xs);
+    }
+
+    .header__book-tema {
+        font-size: 0.8125rem;
+    }
+
+    .header__book-info .header__count {
+        font-size: 0.9375rem;
+        padding: 0.375rem var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   Main
+   ============================================ */
+.main {
+    padding: var(--spacing-xl) 0;
+    min-height: calc(100vh - 300px);
+}
+
+/* ============================================
+   Grid de Tarjetas
+   ============================================ */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9cm, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(7cm, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(5cm, 1fr));
+        gap: 12px;
+        padding: 10px 0;
+    }
+}
+
+/* ============================================
+   Tarjeta de Frase
+   ============================================ */
+.card {
+    width: 9cm;
+    height: 9cm;
+    padding: 0.7cm;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+/* Si es un enlace, tiene cursor pointer */
+.card[href] {
+    cursor: pointer;
+}
+
+/* Si NO es un enlace (div), no tiene cursor pointer */
+.card:not([href]) {
+    cursor: default;
+}
+
+.card[href="#"] {
+    cursor: default;
+    pointer-events: none;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-phrase {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3cm;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.card-meta {
+    font-size: 14px;
+    text-align: right;
+    opacity: 0.9;
+    line-height: 1.5;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        width: 7cm;
+        height: 7cm;
+        padding: 0.6cm;
+    }
+
+    .card-phrase {
+        font-size: 16px;
+    }
+
+    .card-meta {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        width: 5cm;
+        height: 5cm;
+        padding: 0.5cm;
+    }
+
+    .card-phrase {
+        font-size: 12px;
+    }
+
+    .card-meta {
+        font-size: 10px;
+    }
+}
+
+/* ============================================
+   Paleta de Colores
+   ============================================ */
+.card.verde {
+    background: linear-gradient(135deg, var(--color-verde-start), var(--color-verde-end));
+}
+
+.card.azul {
+    background: linear-gradient(135deg, var(--color-azul-start), var(--color-azul-end));
+}
+
+.card.amarillo {
+    background: linear-gradient(135deg, var(--color-amarillo-start), var(--color-amarillo-end));
+    color: #222;
+}
+
+.card.morado {
+    background: linear-gradient(135deg, var(--color-morado-start), var(--color-morado-end));
+}
+
+.card.rojo {
+    background: linear-gradient(135deg, var(--color-rojo-start), var(--color-rojo-end));
+}
+
+.card.gris {
+    background: linear-gradient(135deg, var(--color-gris-start), var(--color-gris-end));
+}
+
+.card.naranja {
+    background: linear-gradient(135deg, var(--color-naranja-start), var(--color-naranja-end));
+}
+
+.card.turquesa {
+    background: linear-gradient(135deg, var(--color-turquesa-start), var(--color-turquesa-end));
+}
+
+.card.menta {
+    background: linear-gradient(135deg, var(--color-menta-start), var(--color-menta-end));
+}
+
+.card.lila {
+    background: linear-gradient(135deg, var(--color-lila-start), var(--color-lila-end));
+}
+
+.card.mostaza {
+    background: linear-gradient(135deg, var(--color-mostaza-start), var(--color-mostaza-end));
+    color: #222;
+}
+
+.card.grafito {
+    background: linear-gradient(135deg, var(--color-grafito-start), var(--color-grafito-end));
+}
+
+.card.cian {
+    background: linear-gradient(135deg, var(--color-cian-start), var(--color-cian-end));
+}
+
+.card.magenta {
+    background: linear-gradient(135deg, var(--color-magenta-start), var(--color-magenta-end));
+}
+
+.card.cafe {
+    background: linear-gradient(135deg, var(--color-cafe-start), var(--color-cafe-end));
+}
+
+.card.blanco {
+    background: linear-gradient(135deg, var(--color-blanco-start), var(--color-blanco-end));
+    color: #333;
+}
+
+/* ============================================
+   Loading
+   ============================================ */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-2xl);
+    color: var(--color-gray-600);
+    min-height: 400px;
+}
+
+.loading.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--color-gray-200);
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: var(--color-gray-800);
+    color: white;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: opacity 0.2s ease;
+}
+
+.footer__link:hover {
+    opacity: 0.8;
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    /* Configuración de página - Hoja carta */
+    @page {
+        size: letter;
+        margin: 1cm 1.5cm;
+    }
+
+    /* Ocultar elementos no necesarios */
+    .top-nav,
+    .header,
+    .footer,
+    .loading {
+        display: none !important;
+    }
+
+    /* Reset del body */
+    body {
+        background: #fff;
+        padding: 0;
+        margin: 0;
+        padding-top: 0 !important;
+    }
+
+    /* Contenedor principal */
+    .main {
+        padding: 0;
+        min-height: auto;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Grid de tarjetas - centrado horizontal, sin separación */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 3cm);
+        gap: 0 !important;
+        justify-content: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Tarjetas de 3x3cm - ESCALADO PROPORCIONAL desde 9cm web */
+    /* Escala: 3cm / 9cm = 0.333 (1/3 del tamaño original) */
+    .card {
+        width: 3cm !important;
+        height: 3cm !important;
+        /* Padding web: 0.7cm → Escalado: 0.7cm * 0.333 = 0.233cm */
+        padding: 0.23cm !important;
+        /* Border-radius web: 12px → Escalado proporcional: 12px * 0.333 = 4px */
+        border-radius: 0 !important;
+        /* Sin sombra en impresión */
+        box-shadow: none !important;
+        /* Borde para delimitar las tarjetas */
+        border: 1px solid #000 !important;
+        page-break-inside: avoid;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        text-align: center !important;
+        position: relative;
+    }
+
+    /* Eliminar efectos hover en impresión */
+    .card:hover {
+        transform: none !important;
+    }
+
+    /* Por defecto: impresoras sin color - fondo blanco */
+    .card {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .card.verde,
+    .card.azul,
+    .card.amarillo,
+    .card.morado,
+    .card.rojo,
+    .card.gris,
+    .card.naranja,
+    .card.turquesa,
+    .card.menta,
+    .card.lila,
+    .card.mostaza,
+    .card.grafito,
+    .card.cian,
+    .card.magenta,
+    .card.cafe,
+    .card.blanco {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* Impresoras a COLOR - mantener gradientes */
+@media print and (color) {
+    /* Forzar impresión de colores */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .card {
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0.67px 2px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    /* Mantener gradientes de color para impresoras a color */
+    .card.verde {
+        background: linear-gradient(135deg, var(--color-verde-start), var(--color-verde-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.azul {
+        background: linear-gradient(135deg, var(--color-azul-start), var(--color-azul-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.amarillo {
+        background: linear-gradient(135deg, var(--color-amarillo-start), var(--color-amarillo-end)) !important;
+        color: #000 !important;
+    }
+
+    .card.morado {
+        background: linear-gradient(135deg, var(--color-morado-start), var(--color-morado-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.rojo {
+        background: linear-gradient(135deg, var(--color-rojo-start), var(--color-rojo-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.gris {
+        background: linear-gradient(135deg, var(--color-gris-start), var(--color-gris-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.naranja {
+        background: linear-gradient(135deg, var(--color-naranja-start), var(--color-naranja-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.turquesa {
+        background: linear-gradient(135deg, var(--color-turquesa-start), var(--color-turquesa-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.menta {
+        background: linear-gradient(135deg, var(--color-menta-start), var(--color-menta-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.lila {
+        background: linear-gradient(135deg, var(--color-lila-start), var(--color-lila-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.mostaza {
+        background: linear-gradient(135deg, var(--color-mostaza-start), var(--color-mostaza-end)) !important;
+        color: #000 !important;
+    }
+
+    .card.grafito {
+        background: linear-gradient(135deg, var(--color-grafito-start), var(--color-grafito-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.cian {
+        background: linear-gradient(135deg, var(--color-cian-start), var(--color-cian-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.magenta {
+        background: linear-gradient(135deg, var(--color-magenta-start), var(--color-magenta-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.cafe {
+        background: linear-gradient(135deg, var(--color-cafe-start), var(--color-cafe-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.blanco {
+        background: linear-gradient(135deg, var(--color-blanco-start), var(--color-blanco-end)) !important;
+        color: #333 !important;
+    }
+}
+
+/* Estilos comunes de texto para ambas impresoras (color y monocromo) */
+@media print {
+    /* Texto de la frase - ESCALADO PROPORCIONAL */
+    /* Font-size web: 20px → Escalado: 20px * 0.333 = 6.67px ≈ 6.7px */
+    /* Usando pt: 6.7px ≈ 5pt (1pt = 1.33px aproximadamente) */
+    .card-phrase {
+        /* 20px * (3/9) = 6.67px ≈ 5pt */
+        font-size: 5pt !important;
+        line-height: 1.4 !important;
+        font-weight: 600 !important;
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* Padding web: 0.3cm → Escalado: 0.3cm * 0.333 = 0.1cm */
+        padding: 0.1cm !important;
+        text-align: center !important;
+        color: inherit !important;
+    }
+
+    /* Meta información (autor/libro) - ESCALADO PROPORCIONAL */
+    /* Font-size web: 14px → Escalado: 14px * 0.333 = 4.67px ≈ 3.5pt */
+    .card-meta {
+        /* 14px * (3/9) = 4.67px ≈ 3.5pt */
+        font-size: 3.5pt !important;
+        line-height: 1.5 !important;
+        opacity: 0.9 !important;
+        text-align: right !important;
+        color: inherit !important;
+    }
+
+    /* Asegurar que los enlaces no se impriman como enlaces */
+    .card[href] {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Evitar que las tarjetas se corten entre páginas */
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

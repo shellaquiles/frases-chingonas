@@ -1,42 +1,35 @@
 /**
- * API Module
- * Maneja la carga de datos desde el servidor
+ * API compartida para cargar datos
  */
-
-import { CONFIG } from './config.js';
 
 /**
- * Carga las frases desde el archivo JSON
- * @returns {Promise<Array>} - Promise que resuelve con el array de frases
- * @throws {Error} - Si hay un error al cargar los datos
+ * Carga los libros desde el archivo JSON
  */
-export async function loadFrases() {
-  try {
-    const response = await fetch(CONFIG.DATA_URL);
-
-    if (!response.ok) {
-      throw new Error(`Error al cargar frases.json: ${response.status}`);
+export async function loadBooks() {
+    try {
+        const response = await fetch('data/libros.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error cargando libros:', error);
+        throw error;
     }
-
-    const frases = await response.json();
-    return frases;
-  } catch (error) {
-    console.error('Error al cargar frases:', error);
-    throw error;
-  }
 }
 
 /**
- * Muestra un mensaje de error en el DOM
- * @param {Error} error - Objeto de error
+ * Carga las frases desde el archivo JSON
  */
-export function showError(error) {
-  document.body.innerHTML = `
-    <div style="padding: 20px; text-align: center; color: #c62828;">
-      <h2>${CONFIG.ERROR_MESSAGES.LOAD_FAILED}</h2>
-      <p>${error.message}</p>
-      <p>${CONFIG.ERROR_MESSAGES.FILE_NOT_FOUND}</p>
-      <p>${CONFIG.ERROR_MESSAGES.GENERATE_JSON}</p>
-    </div>
-  `;
+export async function loadFrases() {
+    try {
+        const response = await fetch('data/frases.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error cargando frases:', error);
+        throw error;
+    }
 }

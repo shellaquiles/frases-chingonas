@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frases chingonas de libros técnicos">
+    <title>Frases Chingonas - Frases Python</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/frases.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="container">
+            <div class="nav__content">
+                <a href="index.html" class="nav__logo">Frases Chingonas</a>
+                <div class="nav__links">
+                    <a href="index.html" class="nav__link">🏠 Inicio</a>
+                    <a href="libros.html" class="nav__link">📚 Biblioteca</a>
+                    <a href="frases.html" class="nav__link nav__link--active">💬 Todas las Frases</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="container">
+            <div class="header__content" id="header-content">
+                <div class="header__text">
+                    <h1 class="header__title" id="book-title">Frases Chingonas</h1>
+                    <p class="header__subtitle" id="book-author"></p>
+                    <p class="header__count" id="frases-count">0 frases</p>
+                </div>
+                <div class="header__book-info" id="header-book-info" style="display: none;">
+                    <img class="header__cover" id="book-cover" src="" alt="Portada del libro" onerror="this.style.display='none'">
+                    <div class="header__book-details">
+                        <div class="header__book-header">
+                            <h2 class="header__book-title" id="book-title-detail"></h2>
+                            <p class="header__book-author" id="book-author-detail"></p>
+                        </div>
+                        <div class="header__book-description" id="book-description"></div>
+                        <div class="header__book-meta" id="book-meta"></div>
+                        <div class="header__book-footer">
+                            <p class="header__book-tema" id="book-tema"></p>
+                            <p class="header__count" id="book-count">0 frases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Loading spinner -->
+            <div class="loading" id="loading" aria-live="polite" aria-busy="true">
+                <div class="spinner"></div>
+                <p>Cargando frases...</p>
+            </div>
+
+            <div class="cards-grid" id="cards-grid" role="list" aria-label="Frases del libro">
+                <!-- Las tarjetas se cargarán dinámicamente aquí -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="libros.html" class="footer__link">← Volver al catálogo de libros</a>
+        </div>
+    </footer>
+
+    <script src="js/frases.js" type="module"></script>
+</body>
+</html>

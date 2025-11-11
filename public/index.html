@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarjetas PythonCDMX - Paleta Completa</title>
-  <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frases inspiradas en libros técnicos y de desarrollo profesional">
+    <title>Frases Python - Frase del Día</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <script type="module" src="js/app.js"></script>
+    <div class="container">
+        <div class="frase-container" id="frase-container">
+            <div class="frase-content" id="frase-content">
+                <a href="#" class="frase-link" id="frase-link">
+                    <p class="frase-text" id="frase-text">Cargando frase...</p>
+                    <div class="frase-meta" id="frase-meta">
+                        <span class="frase-author" id="frase-author"></span>
+                        <span class="frase-book" id="frase-book"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="libros.html" class="nav-link nav-link--library">
+                📚 Ver Biblioteca
+            </a>
+            <button class="nav-link nav-link--random" id="random-frase-btn">
+                🎲 Otra Frase Aleatoria
+            </button>
+        </nav>
+    </div>
+
+    <script src="js/index.js" type="module"></script>
 </body>
 </html>
