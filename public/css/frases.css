@@ -819,33 +819,241 @@ body {
    Print Styles
    ============================================ */
 @media print {
+    /* Configuración de página - Hoja carta */
+    @page {
+        size: letter;
+        margin: 1cm 1.5cm;
+    }
+
+    /* Ocultar elementos no necesarios */
+    .top-nav,
+    .header,
+    .footer,
+    .loading {
+        display: none !important;
+    }
+
+    /* Reset del body */
     body {
         background: #fff;
         padding: 0;
+        margin: 0;
+        padding-top: 0 !important;
     }
 
-    .header {
-        box-shadow: none;
-        margin-bottom: var(--spacing-md);
-    }
-
-    .footer {
-        display: none;
-    }
-
-    .cards-grid {
-        gap: 0;
+    /* Contenedor principal */
+    .main {
         padding: 0;
+        min-height: auto;
     }
 
-    .card {
-        box-shadow: none;
-        page-break-inside: avoid;
+    .container {
+        max-width: 100%;
+        padding: 0;
         margin: 0;
     }
 
+    /* Grid de tarjetas - centrado horizontal, sin separación */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 3cm);
+        gap: 0 !important;
+        justify-content: center;
+        padding: 0;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /* Tarjetas de 3x3cm - ESCALADO PROPORCIONAL desde 9cm web */
+    /* Escala: 3cm / 9cm = 0.333 (1/3 del tamaño original) */
+    .card {
+        width: 3cm !important;
+        height: 3cm !important;
+        /* Padding web: 0.7cm → Escalado: 0.7cm * 0.333 = 0.233cm */
+        padding: 0.23cm !important;
+        /* Border-radius web: 12px → Escalado proporcional: 12px * 0.333 = 4px */
+        border-radius: 0 !important;
+        /* Sin sombra en impresión */
+        box-shadow: none !important;
+        /* Borde para delimitar las tarjetas */
+        border: 1px solid #000 !important;
+        page-break-inside: avoid;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        text-align: center !important;
+        position: relative;
+    }
+
+    /* Eliminar efectos hover en impresión */
     .card:hover {
-        transform: none;
-        box-shadow: none;
+        transform: none !important;
+    }
+
+    /* Por defecto: impresoras sin color - fondo blanco */
+    .card {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .card.verde,
+    .card.azul,
+    .card.amarillo,
+    .card.morado,
+    .card.rojo,
+    .card.gris,
+    .card.naranja,
+    .card.turquesa,
+    .card.menta,
+    .card.lila,
+    .card.mostaza,
+    .card.grafito,
+    .card.cian,
+    .card.magenta,
+    .card.cafe,
+    .card.blanco {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* Impresoras a COLOR - mantener gradientes */
+@media print and (color) {
+    /* Forzar impresión de colores */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .card {
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0.67px 2px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    /* Mantener gradientes de color para impresoras a color */
+    .card.verde {
+        background: linear-gradient(135deg, var(--color-verde-start), var(--color-verde-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.azul {
+        background: linear-gradient(135deg, var(--color-azul-start), var(--color-azul-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.amarillo {
+        background: linear-gradient(135deg, var(--color-amarillo-start), var(--color-amarillo-end)) !important;
+        color: #000 !important;
+    }
+
+    .card.morado {
+        background: linear-gradient(135deg, var(--color-morado-start), var(--color-morado-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.rojo {
+        background: linear-gradient(135deg, var(--color-rojo-start), var(--color-rojo-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.gris {
+        background: linear-gradient(135deg, var(--color-gris-start), var(--color-gris-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.naranja {
+        background: linear-gradient(135deg, var(--color-naranja-start), var(--color-naranja-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.turquesa {
+        background: linear-gradient(135deg, var(--color-turquesa-start), var(--color-turquesa-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.menta {
+        background: linear-gradient(135deg, var(--color-menta-start), var(--color-menta-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.lila {
+        background: linear-gradient(135deg, var(--color-lila-start), var(--color-lila-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.mostaza {
+        background: linear-gradient(135deg, var(--color-mostaza-start), var(--color-mostaza-end)) !important;
+        color: #000 !important;
+    }
+
+    .card.grafito {
+        background: linear-gradient(135deg, var(--color-grafito-start), var(--color-grafito-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.cian {
+        background: linear-gradient(135deg, var(--color-cian-start), var(--color-cian-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.magenta {
+        background: linear-gradient(135deg, var(--color-magenta-start), var(--color-magenta-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.cafe {
+        background: linear-gradient(135deg, var(--color-cafe-start), var(--color-cafe-end)) !important;
+        color: #fff !important;
+    }
+
+    .card.blanco {
+        background: linear-gradient(135deg, var(--color-blanco-start), var(--color-blanco-end)) !important;
+        color: #333 !important;
+    }
+}
+
+/* Estilos comunes de texto para ambas impresoras (color y monocromo) */
+@media print {
+    /* Texto de la frase - ESCALADO PROPORCIONAL */
+    /* Font-size web: 20px → Escalado: 20px * 0.333 = 6.67px ≈ 6.7px */
+    /* Usando pt: 6.7px ≈ 5pt (1pt = 1.33px aproximadamente) */
+    .card-phrase {
+        /* 20px * (3/9) = 6.67px ≈ 5pt */
+        font-size: 5pt !important;
+        line-height: 1.4 !important;
+        font-weight: 600 !important;
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        /* Padding web: 0.3cm → Escalado: 0.3cm * 0.333 = 0.1cm */
+        padding: 0.1cm !important;
+        text-align: center !important;
+        color: inherit !important;
+    }
+
+    /* Meta información (autor/libro) - ESCALADO PROPORCIONAL */
+    /* Font-size web: 14px → Escalado: 14px * 0.333 = 4.67px ≈ 3.5pt */
+    .card-meta {
+        /* 14px * (3/9) = 4.67px ≈ 3.5pt */
+        font-size: 3.5pt !important;
+        line-height: 1.5 !important;
+        opacity: 0.9 !important;
+        text-align: right !important;
+        color: inherit !important;
+    }
+
+    /* Asegurar que los enlaces no se impriman como enlaces */
+    .card[href] {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Evitar que las tarjetas se corten entre páginas */
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
     }
 }
