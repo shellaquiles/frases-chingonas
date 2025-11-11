@@ -226,6 +226,20 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-lg) 0;
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--spacing-md) 0;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
 .header::before {
     content: '';
     position: absolute;
@@ -417,51 +431,132 @@ body {
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: var(--spacing-xl) 0;
-    }
-
     .header__title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .header__subtitle {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .header__book-info {
         grid-template-columns: 1fr;
-        gap: var(--spacing-xl);
-        padding: var(--spacing-xl);
-        border-radius: 20px;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
+        border-radius: 16px;
+        margin: 0 var(--spacing-sm);
     }
 
     .header__cover {
-        width: 140px;
-        height: 210px;
+        width: 100px;
+        height: 150px;
         margin: 0 auto;
     }
 
     .header__book-details {
         text-align: center;
+        gap: var(--spacing-md);
     }
 
     .header__book-header {
         text-align: center;
+        padding-bottom: var(--spacing-md);
     }
 
     .header__book-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .header__book-author {
+        font-size: 1rem;
+    }
+
+    .header__book-description {
+        font-size: 0.9375rem;
+        padding: var(--spacing-md);
+        line-height: 1.6;
+    }
+
+    .header__book-meta {
+        justify-content: center;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .header__book-meta span {
+        font-size: 0.8125rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .header__book-footer {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding-top: var(--spacing-md);
+        gap: var(--spacing-md);
     }
 
     .header__book-tema {
         text-align: center;
+        font-size: 0.875rem;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .header__book-info .header__count {
+        font-size: 1rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .header__subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .header__book-info {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .header__cover {
+        width: 80px;
+        height: 120px;
+    }
+
+    .header__book-title {
+        font-size: 1.25rem;
+    }
+
+    .header__book-author {
+        font-size: 0.9375rem;
+    }
+
+    .header__book-description {
+        font-size: 0.875rem;
+        padding: var(--spacing-sm);
+        line-height: 1.5;
+    }
+
+    .header__book-meta span {
+        font-size: 0.75rem;
+        padding: 0.25rem var(--spacing-xs);
+    }
+
+    .header__book-tema {
+        font-size: 0.8125rem;
+    }
+
+    .header__book-info .header__count {
+        font-size: 0.9375rem;
+        padding: 0.375rem var(--spacing-sm);
     }
 }
 
