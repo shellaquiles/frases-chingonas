@@ -4,8 +4,8 @@
  * búsqueda, filtrado y visualización detallada
  */
 
-import { normalizeText, formatYear, truncate, debounce } from './utils.js';
 import { loadBooks, loadFrases } from './api.js';
+import { debounce, formatYear, normalizeText, truncate } from './utils.js';
 
 // ============================================
 // Estado de la aplicación
@@ -119,7 +119,7 @@ const Renderer = {
                     </div>
                     ${hasFrases ? `
                         <button class="book-card__btn-frases" data-clave="${clave}" aria-label="Ver frases de ${book.titulo}">
-                            🔥 Ver frases chingonas del libro (${frasesCount})
+                            Ver frases chingonas del libro (${frasesCount})
                         </button>
                     ` : ''}
                 </div>

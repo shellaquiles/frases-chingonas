@@ -219,7 +219,7 @@ const Renderer = {
             // Mostrar texto simple para todas las frases
             if (titleEl) {
                 titleEl.style.display = 'block';
-                titleEl.textContent = '🔥 Todas las Frases Chingonas';
+                titleEl.textContent = 'Todas las Frases Chingonas';
             }
 
             if (authorEl) {
