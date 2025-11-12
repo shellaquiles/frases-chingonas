@@ -200,6 +200,37 @@ body {
     border-color: rgba(245, 158, 11, 0.6);
 }
 
+.nav-link--about {
+    background: rgba(118, 75, 162, 0.3);
+    border-color: rgba(118, 75, 162, 0.5);
+}
+
+.nav-link--about:hover {
+    background: rgba(118, 75, 162, 0.4);
+    border-color: rgba(118, 75, 162, 0.6);
+}
+
+.nav-link--github {
+    background: rgba(51, 51, 51, 0.3);
+    border-color: rgba(51, 51, 51, 0.5);
+}
+
+.nav-link--github:hover {
+    background: rgba(51, 51, 51, 0.4);
+    border-color: rgba(51, 51, 51, 0.6);
+}
+
+.nav-link-icon {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    vertical-align: middle;
+}
+
 /* ============================================
    Loading
    ============================================ */
@@ -273,4 +304,37 @@ body {
     .frase-book {
         font-size: 0.875rem;
     }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.footer p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.footer__github {
+    margin-top: var(--spacing-sm);
+}
+
+.footer__link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+    color: white;
+    text-decoration: underline;
 }

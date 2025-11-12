@@ -142,6 +142,11 @@ const Renderer = {
         // Si hay un libro específico, mostrar información detallada
         if (libro && !isAllFrases) {
             // Ocultar texto simple y mostrar información del libro
+            const headerText = document.querySelector('.header__text');
+            if (headerText) {
+                headerText.style.display = 'none';
+            }
+
             if (titleEl) titleEl.style.display = 'none';
             if (authorEl) authorEl.style.display = 'none';
 
@@ -217,6 +222,11 @@ const Renderer = {
             }
         } else {
             // Mostrar texto simple para todas las frases
+            const headerText = document.querySelector('.header__text');
+            if (headerText) {
+                headerText.style.display = 'block';
+            }
+
             if (titleEl) {
                 titleEl.style.display = 'block';
                 titleEl.textContent = 'Todas las Frases Chingonas';
@@ -356,7 +366,7 @@ const App = {
                 Renderer.toggleLoading(false);
 
                 // Actualizar título de la página
-                document.title = 'Todas las Frases - Frases Python';
+                document.title = 'Todas las Frases chingonas';
                 return;
             }
 
@@ -395,7 +405,7 @@ const App = {
 
             // Actualizar título de la página
             if (libro.titulo) {
-                document.title = `Frases de ${libro.titulo} - Frases Python`;
+                document.title = `Frases de ${libro.titulo} - Frases Chingonas`;
             }
         } catch (error) {
             console.error('Error inicializando la aplicación:', error);
@@ -423,10 +433,67 @@ const App = {
 };
 
 // ============================================
+// Controles de Impresión
+// ============================================
+const PrintControls = {
+    /**
+     * Inicializa los controles de impresión
+     */
+    init() {
+        const printColorBtn = document.getElementById('print-color-btn');
+        const printBwBtn = document.getElementById('print-bw-btn');
+
+        if (printColorBtn) {
+            printColorBtn.addEventListener('click', () => {
+                this.printWithColor();
+            });
+        }
+
+        if (printBwBtn) {
+            printBwBtn.addEventListener('click', () => {
+                this.printWithBlackAndWhite();
+            });
+        }
+    },
+
+    /**
+     * Imprime en color
+     */
+    printWithColor() {
+        // Agregar clase al body para forzar impresión en color
+        document.body.classList.add('print-color-mode');
+        document.body.classList.remove('print-bw-mode');
+
+        // Esperar un momento para que se apliquen los estilos
+        setTimeout(() => {
+            window.print();
+        }, 100);
+    },
+
+    /**
+     * Imprime en blanco y negro
+     */
+    printWithBlackAndWhite() {
+        // Agregar clase al body para forzar impresión en B/N
+        document.body.classList.add('print-bw-mode');
+        document.body.classList.remove('print-color-mode');
+
+        // Esperar un momento para que se apliquen los estilos
+        setTimeout(() => {
+            window.print();
+        }, 100);
+    }
+};
+
+// ============================================
 // Iniciar aplicación cuando el DOM esté listo
 // ============================================
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => App.init());
+    document.addEventListener('DOMContentLoaded', () => {
+        App.init();
+        PrintControls.init();
+    });
 } else {
     App.init();
+    PrintControls.init();
 }

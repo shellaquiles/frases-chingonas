@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Frases chingonas de libros técnicos">
-    <title>Frases Chingonas - Frases Python</title>
+    <title>Frases Chingonas</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/frases.css">
 </head>
 <body>
@@ -19,6 +20,11 @@
                     <a href="index.html" class="nav__link">🏠 Inicio</a>
                     <a href="libros.html" class="nav__link">📚 Biblioteca</a>
                     <a href="frases.html" class="nav__link nav__link--active">💬 Todas las Frases</a>
+                    <a href="acerca.html" class="nav__link">ℹ️ Acerca de</a>
+                    <a href="https://github.com/shellaquiles/frases-chingonas/" target="_blank" rel="noopener noreferrer" class="nav__link">
+                        <img src="https://github.com/fluidicon.png" alt="GitHub" class="nav__link-icon">
+                        Ver repo
+                    </a>
                 </div>
             </div>
         </div>
@@ -66,9 +72,25 @@
 
     <footer class="footer">
         <div class="container">
-            <a href="libros.html" class="footer__link">← Volver al catálogo de libros</a>
+            <p>&copy; 2024 Frases chingonas. Todos los derechos reservados.</p>
+            <p class="footer__github">
+                <a href="https://github.com/shellaquiles/frases-chingonas/" target="_blank" rel="noopener noreferrer" class="footer__link">
+                    Ver en GitHub
+                </a>
+            </p>
         </div>
     </footer>
+
+    <div class="print-controls">
+        <div class="container">
+            <button class="print-btn print-btn--color" id="print-color-btn" aria-label="Imprimir en color">
+                🖨️ Imprimir en Color
+            </button>
+            <button class="print-btn print-btn--bw" id="print-bw-btn" aria-label="Imprimir en blanco y negro">
+        🖨️ Imprimir en B/N
+            </button>
+        </div>
+    </div>
 
     <script src="js/frases.js" type="module"></script>
 </body>

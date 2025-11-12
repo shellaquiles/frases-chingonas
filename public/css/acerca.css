@@ -1,0 +1,291 @@
+/* ============================================
+   Estilos específicos de acerca.html
+   ============================================ */
+
+/* Estilos del body específicos para esta página */
+body {
+    background: #f5f5f5;
+    padding-top: 70px; /* Espacio para el menú fijo */
+}
+
+/* Responsive: Menú en móviles */
+@media (max-width: 640px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* ============================================
+   Header
+   ============================================ */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--spacing-2xl) 0;
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.header__subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: var(--spacing-lg) 0;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .header__title {
+        font-size: 1.75rem;
+    }
+
+    .header__subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: var(--spacing-md) 0;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .header__subtitle {
+        font-size: 0.9375rem;
+    }
+}
+
+/* ============================================
+   Main
+   ============================================ */
+.main {
+    padding: var(--spacing-xl) 0;
+    min-height: calc(100vh - 300px);
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.about-card {
+    background: white;
+    border-radius: 16px;
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.about-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.about-card--highlight {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.about-card__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-900);
+    letter-spacing: -0.01em;
+}
+
+.about-card__text {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-md);
+}
+
+.about-card__text:last-child {
+    margin-bottom: 0;
+}
+
+.about-card__text strong {
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+/* ============================================
+   Features List
+   ============================================ */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.features-list__item {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+    padding-left: var(--spacing-lg);
+    position: relative;
+}
+
+.features-list__item::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.features-list__item strong {
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+/* ============================================
+   Pages Grid
+   ============================================ */
+.pages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.page-card {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    transition: all 0.2s ease;
+}
+
+.page-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.page-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-900);
+}
+
+.page-card__text {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-gray-700);
+}
+
+@media (max-width: 640px) {
+    .pages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   Steps List
+   ============================================ */
+.steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: step-counter;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.steps-list__item {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-gray-700);
+    padding-left: calc(var(--spacing-xl) + var(--spacing-md));
+    position: relative;
+    counter-increment: step-counter;
+}
+
+.steps-list__item::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--spacing-xl);
+    height: var(--spacing-xl);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.steps-list__item strong {
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+
+@media (max-width: 640px) {
+    .about-card {
+        padding: var(--spacing-lg);
+    }
+
+    .about-card__title {
+        font-size: 1.5rem;
+    }
+
+    .about-card__text,
+    .features-list__item,
+    .steps-list__item {
+        font-size: 1rem;
+    }
+}

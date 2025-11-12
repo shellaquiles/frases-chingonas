@@ -118,12 +118,15 @@ python3 scripts/convert_libros_jsonl.py
 ```bash
 # Iniciar servidor en http://localhost:8000
 python3 server.py
+
+# O en un puerto personalizado
+python3 server.py 8001
 ```
 
 Abre tu navegador en:
-- **http://localhost:8000/public/index.html** - Página principal
-- **http://localhost:8000/public/libros.html** - Catálogo de libros
-- **http://localhost:8000/public/frases.html** - Todas las frases
+- **http://localhost:8000/index.html** - Página principal
+- **http://localhost:8000/libros.html** - Catálogo de libros
+- **http://localhost:8000/frases.html** - Todas las frases
 
 ### Para GitHub Pages (Despliegue Automático)
 
