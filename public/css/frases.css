@@ -84,6 +84,13 @@ body {
     box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
 }
 
+.nav__link-icon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
 /* Responsive: Menú en móviles */
 @media (max-width: 640px) {
     body {
@@ -126,11 +133,13 @@ body {
     overflow: hidden;
 }
 
+
 @media (max-width: 768px) {
     .header {
         padding: var(--spacing-lg) 0;
         margin-bottom: var(--spacing-lg);
     }
+
 }
 
 @media (max-width: 480px) {
@@ -704,15 +713,92 @@ body {
     margin-top: var(--spacing-2xl);
 }
 
+.footer p {
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.footer__github {
+    margin-top: var(--spacing-sm);
+}
+
 .footer__link {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 0.9375rem;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .footer__link:hover {
-    opacity: 0.8;
+    color: white;
+    text-decoration: underline;
+}
+
+/* ============================================
+   Controles de Impresión
+   ============================================ */
+.print-controls {
+    background: var(--color-gray-100);
+    border-top: 1px solid var(--color-gray-200);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-2xl);
+}
+
+.print-controls .container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.print-btn {
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-family);
+}
+
+.print-btn--color {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.print-btn--color:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #653a8f 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.print-btn--bw {
+    background: var(--color-gray-700);
+    color: white;
+}
+
+.print-btn--bw:hover {
+    background: var(--color-gray-800);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.print-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    .print-controls .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .print-btn {
+        width: 100%;
+    }
 }
 
 /* ============================================
@@ -756,7 +842,7 @@ body {
     /* Grid de tarjetas - centrado horizontal, sin separación */
     .cards-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 3cm);
+        grid-template-columns: repeat(auto-fill, 5cm);
         gap: 0 !important;
         justify-content: center;
         padding: 0;
@@ -764,14 +850,14 @@ body {
         width: 100%;
     }
 
-    /* Tarjetas de 3x3cm - ESCALADO PROPORCIONAL desde 9cm web */
-    /* Escala: 3cm / 9cm = 0.333 (1/3 del tamaño original) */
+    /* Tarjetas de 5x5cm - ESCALADO PROPORCIONAL desde 9cm web */
+    /* Escala: 5cm / 9cm = 0.556 (aproximadamente 5/9 del tamaño original) */
     .card {
-        width: 3cm !important;
-        height: 3cm !important;
-        /* Padding web: 0.7cm → Escalado: 0.7cm * 0.333 = 0.233cm */
-        padding: 0.23cm !important;
-        /* Border-radius web: 12px → Escalado proporcional: 12px * 0.333 = 4px */
+        width: 5cm !important;
+        height: 5cm !important;
+        /* Padding web: 0.7cm → Escalado: 0.7cm * 0.556 = 0.389cm */
+        padding: 0.39cm !important;
+        /* Border-radius web: 12px → Escalado proporcional: 12px * 0.556 = 6.67px ≈ 7px */
         border-radius: 0 !important;
         /* Sin sombra en impresión */
         box-shadow: none !important;
@@ -818,12 +904,140 @@ body {
     }
 }
 
-/* Impresoras a COLOR - mantener gradientes */
-@media print and (color) {
-    /* Forzar impresión de colores */
-    * {
+/* Modo forzado: Impresión en color */
+@media print {
+    body.print-color-mode * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+    }
+
+    body.print-color-mode .card {
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0.67px 2px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    body.print-color-mode .card.verde {
+        background: var(--color-verde-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.azul {
+        background: var(--color-azul-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.amarillo {
+        background: var(--color-amarillo-start) !important;
+        color: #000 !important;
+    }
+
+    body.print-color-mode .card.morado {
+        background: var(--color-morado-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.rojo {
+        background: var(--color-rojo-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.gris {
+        background: var(--color-gris-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.naranja {
+        background: var(--color-naranja-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.turquesa {
+        background: var(--color-turquesa-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.menta {
+        background: var(--color-menta-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.lila {
+        background: var(--color-lila-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.mostaza {
+        background: var(--color-mostaza-start) !important;
+        color: #000 !important;
+    }
+
+    body.print-color-mode .card.grafito {
+        background: var(--color-grafito-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.cian {
+        background: var(--color-cian-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.magenta {
+        background: var(--color-magenta-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.cafe {
+        background: var(--color-cafe-start) !important;
+        color: #fff !important;
+    }
+
+    body.print-color-mode .card.blanco {
+        background: var(--color-blanco-start) !important;
+        color: #333 !important;
+    }
+}
+
+/* Modo forzado: Impresión en blanco y negro */
+@media print {
+    body.print-bw-mode * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body.print-bw-mode .card.verde,
+    body.print-bw-mode .card.azul,
+    body.print-bw-mode .card.amarillo,
+    body.print-bw-mode .card.morado,
+    body.print-bw-mode .card.rojo,
+    body.print-bw-mode .card.gris,
+    body.print-bw-mode .card.naranja,
+    body.print-bw-mode .card.turquesa,
+    body.print-bw-mode .card.menta,
+    body.print-bw-mode .card.lila,
+    body.print-bw-mode .card.mostaza,
+    body.print-bw-mode .card.grafito,
+    body.print-bw-mode .card.cian,
+    body.print-bw-mode .card.magenta,
+    body.print-bw-mode .card.cafe,
+    body.print-bw-mode .card.blanco {
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* Impresoras a COLOR - mantener gradientes (detección automática) */
+@media print and (color) {
+    /* Solo aplicar si no hay modo forzado */
+    body:not(.print-bw-mode) * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    body:not(.print-bw-mode) .card {
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0.67px 2px rgba(0, 0, 0, 0.25) !important;
     }
 
     .card {
@@ -832,84 +1046,84 @@ body {
         box-shadow: 0 0.67px 2px rgba(0, 0, 0, 0.25) !important;
     }
 
-    /* Mantener gradientes de color para impresoras a color */
-    .card.verde {
-        background: linear-gradient(135deg, var(--color-verde-start), var(--color-verde-end)) !important;
+    /* Colores sólidos para impresoras a color (sin gradientes) */
+    body:not(.print-bw-mode) .card.verde {
+        background: var(--color-verde-start) !important;
         color: #fff !important;
     }
 
-    .card.azul {
-        background: linear-gradient(135deg, var(--color-azul-start), var(--color-azul-end)) !important;
+    body:not(.print-bw-mode) .card.azul {
+        background: var(--color-azul-start) !important;
         color: #fff !important;
     }
 
-    .card.amarillo {
-        background: linear-gradient(135deg, var(--color-amarillo-start), var(--color-amarillo-end)) !important;
+    body:not(.print-bw-mode) .card.amarillo {
+        background: var(--color-amarillo-start) !important;
         color: #000 !important;
     }
 
-    .card.morado {
-        background: linear-gradient(135deg, var(--color-morado-start), var(--color-morado-end)) !important;
+    body:not(.print-bw-mode) .card.morado {
+        background: var(--color-morado-start) !important;
         color: #fff !important;
     }
 
-    .card.rojo {
-        background: linear-gradient(135deg, var(--color-rojo-start), var(--color-rojo-end)) !important;
+    body:not(.print-bw-mode) .card.rojo {
+        background: var(--color-rojo-start) !important;
         color: #fff !important;
     }
 
-    .card.gris {
-        background: linear-gradient(135deg, var(--color-gris-start), var(--color-gris-end)) !important;
+    body:not(.print-bw-mode) .card.gris {
+        background: var(--color-gris-start) !important;
         color: #fff !important;
     }
 
-    .card.naranja {
-        background: linear-gradient(135deg, var(--color-naranja-start), var(--color-naranja-end)) !important;
+    body:not(.print-bw-mode) .card.naranja {
+        background: var(--color-naranja-start) !important;
         color: #fff !important;
     }
 
-    .card.turquesa {
-        background: linear-gradient(135deg, var(--color-turquesa-start), var(--color-turquesa-end)) !important;
+    body:not(.print-bw-mode) .card.turquesa {
+        background: var(--color-turquesa-start) !important;
         color: #fff !important;
     }
 
-    .card.menta {
-        background: linear-gradient(135deg, var(--color-menta-start), var(--color-menta-end)) !important;
+    body:not(.print-bw-mode) .card.menta {
+        background: var(--color-menta-start) !important;
         color: #fff !important;
     }
 
-    .card.lila {
-        background: linear-gradient(135deg, var(--color-lila-start), var(--color-lila-end)) !important;
+    body:not(.print-bw-mode) .card.lila {
+        background: var(--color-lila-start) !important;
         color: #fff !important;
     }
 
-    .card.mostaza {
-        background: linear-gradient(135deg, var(--color-mostaza-start), var(--color-mostaza-end)) !important;
+    body:not(.print-bw-mode) .card.mostaza {
+        background: var(--color-mostaza-start) !important;
         color: #000 !important;
     }
 
-    .card.grafito {
-        background: linear-gradient(135deg, var(--color-grafito-start), var(--color-grafito-end)) !important;
+    body:not(.print-bw-mode) .card.grafito {
+        background: var(--color-grafito-start) !important;
         color: #fff !important;
     }
 
-    .card.cian {
-        background: linear-gradient(135deg, var(--color-cian-start), var(--color-cian-end)) !important;
+    body:not(.print-bw-mode) .card.cian {
+        background: var(--color-cian-start) !important;
         color: #fff !important;
     }
 
-    .card.magenta {
-        background: linear-gradient(135deg, var(--color-magenta-start), var(--color-magenta-end)) !important;
+    body:not(.print-bw-mode) .card.magenta {
+        background: var(--color-magenta-start) !important;
         color: #fff !important;
     }
 
-    .card.cafe {
-        background: linear-gradient(135deg, var(--color-cafe-start), var(--color-cafe-end)) !important;
+    body:not(.print-bw-mode) .card.cafe {
+        background: var(--color-cafe-start) !important;
         color: #fff !important;
     }
 
-    .card.blanco {
-        background: linear-gradient(135deg, var(--color-blanco-start), var(--color-blanco-end)) !important;
+    body:not(.print-bw-mode) .card.blanco {
+        background: var(--color-blanco-start) !important;
         color: #333 !important;
     }
 }
@@ -917,28 +1131,28 @@ body {
 /* Estilos comunes de texto para ambas impresoras (color y monocromo) */
 @media print {
     /* Texto de la frase - ESCALADO PROPORCIONAL */
-    /* Font-size web: 20px → Escalado: 20px * 0.333 = 6.67px ≈ 6.7px */
-    /* Usando pt: 6.7px ≈ 5pt (1pt = 1.33px aproximadamente) */
+    /* Font-size web: 20px → Escalado: 20px * 0.556 = 11.12px */
+    /* Usando pt: 11.12px ≈ 8.3pt (1pt = 1.33px aproximadamente) */
     .card-phrase {
-        /* 20px * (3/9) = 6.67px ≈ 5pt */
-        font-size: 5pt !important;
+        /* 20px * (5/9) = 11.12px ≈ 8.3pt */
+        font-size: 8.3pt !important;
         line-height: 1.4 !important;
         font-weight: 600 !important;
         flex: 1 !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        /* Padding web: 0.3cm → Escalado: 0.3cm * 0.333 = 0.1cm */
-        padding: 0.1cm !important;
+        /* Padding web: 0.3cm → Escalado: 0.3cm * 0.556 = 0.167cm */
+        padding: 0.17cm !important;
         text-align: center !important;
         color: inherit !important;
     }
 
     /* Meta información (autor/libro) - ESCALADO PROPORCIONAL */
-    /* Font-size web: 14px → Escalado: 14px * 0.333 = 4.67px ≈ 3.5pt */
+    /* Font-size web: 14px → Escalado: 14px * 0.556 = 7.784px ≈ 5.8pt */
     .card-meta {
-        /* 14px * (3/9) = 4.67px ≈ 3.5pt */
-        font-size: 3.5pt !important;
+        /* 14px * (5/9) = 7.784px ≈ 5.8pt */
+        font-size: 5.8pt !important;
         line-height: 1.5 !important;
         opacity: 0.9 !important;
         text-align: right !important;
