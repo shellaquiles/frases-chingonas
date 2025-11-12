@@ -31,20 +31,27 @@ class MyHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
 
 def main():
     """Inicia el servidor web"""
-    # Cambiar al directorio base del proyecto (donde está el script)
+    # Cambiar al directorio public/ para servir desde ahí
     base_dir = Path(__file__).parent
-    os.chdir(base_dir)
+    public_dir = base_dir / "public"
+
+    if not public_dir.exists():
+        print(f"❌ Error: No se encontró el directorio 'public/' en {base_dir}")
+        sys.exit(1)
+
+    os.chdir(public_dir)
 
     try:
         with socketserver.TCPServer(("", PORT), MyHTTPRequestHandler) as httpd:
             print("=" * 60)
             print(f"🚀 Servidor web iniciado en http://localhost:{PORT}")
             print("=" * 60)
-            print(f"📁 Sirviendo archivos desde: {base_dir}")
-            print(f"🌐 Páginas disponibles:")
-            print(f"   - http://localhost:{PORT}/public/index.html (Página principal)")
-            print(f"   - http://localhost:{PORT}/public/libros.html (Catálogo de libros)")
-            print(f"   - http://localhost:{PORT}/public/frases.html (Frases de un libro)")
+            print(f"📁 Sirviendo archivos desde: {public_dir}")
+            print("🌐 Páginas disponibles:")
+            url_base = f"http://localhost:{PORT}"
+            print(f"   - {url_base}/index.html (Página principal)")
+            print(f"   - {url_base}/libros.html (Catálogo de libros)")
+            print(f"   - {url_base}/frases.html (Frases de un libro)")
             print("=" * 60)
             print("Presiona Ctrl+C para detener el servidor")
             print("=" * 60)
