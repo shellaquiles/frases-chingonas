@@ -200,6 +200,37 @@ body {
     border-color: rgba(245, 158, 11, 0.6);
 }
 
+.nav-link--about {
+    background: rgba(118, 75, 162, 0.3);
+    border-color: rgba(118, 75, 162, 0.5);
+}
+
+.nav-link--about:hover {
+    background: rgba(118, 75, 162, 0.4);
+    border-color: rgba(118, 75, 162, 0.6);
+}
+
+.nav-link--github {
+    background: rgba(51, 51, 51, 0.3);
+    border-color: rgba(51, 51, 51, 0.5);
+}
+
+.nav-link--github:hover {
+    background: rgba(51, 51, 51, 0.4);
+    border-color: rgba(51, 51, 51, 0.6);
+}
+
+.nav-link-icon {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+    display: block;
+    vertical-align: middle;
+}
+
 /* ============================================
    Loading
    ============================================ */
