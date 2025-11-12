@@ -8,116 +8,10 @@ body {
     padding-top: 70px; /* Espacio para el menú fijo */
 }
 
-/* ============================================
-   Top Navigation (Fixed Menu)
-   ============================================ */
-.top-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.nav__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) 0;
-    gap: var(--spacing-lg);
-}
-
-.nav__logo {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--color-gray-900);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    transition: transform 0.2s ease, color 0.2s ease;
-    white-space: nowrap;
-}
-
-.nav__logo:hover {
-    transform: scale(1.05);
-    color: #667eea;
-}
-
-.nav__links {
-    display: flex;
-    gap: var(--spacing-sm);
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.nav__link {
-    padding: var(--spacing-sm) var(--spacing-md);
-    color: var(--color-gray-700);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9375rem;
-    border-radius: var(--border-radius-md);
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    position: relative;
-}
-
-.nav__link:hover {
-    background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
-    transform: translateY(-1px);
-}
-
-.nav__link--active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-}
-
-.nav__link--active:hover {
-    background: linear-gradient(135deg, #5568d3 0%, #653a8f 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
-}
-
-.nav__link-icon {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 4px;
-}
-
 /* Responsive: Menú en móviles */
 @media (max-width: 640px) {
     body {
         padding-top: 60px;
-    }
-
-    .nav__content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: var(--spacing-sm) 0;
-        gap: var(--spacing-sm);
-    }
-
-    .nav__logo {
-        font-size: 1.125rem;
-    }
-
-    .nav__links {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .nav__link {
-        flex: 1;
-        text-align: center;
-        font-size: 0.875rem;
-        padding: var(--spacing-xs) var(--spacing-sm);
     }
 }
 
@@ -132,7 +26,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 
 @media (max-width: 768px) {
     .header {
@@ -165,10 +58,12 @@ body {
 .header__content {
     position: relative;
     z-index: 1;
+    text-align: center;
 }
 
 .header__text {
     text-align: center;
+    display: block !important;
 }
 
 .header__title {
@@ -177,6 +72,8 @@ body {
     margin-bottom: var(--spacing-sm);
     letter-spacing: -0.02em;
     line-height: 1.2;
+    display: block !important;
+    color: white;
 }
 
 .header__subtitle {
@@ -184,12 +81,16 @@ body {
     opacity: 0.9;
     font-weight: 400;
     margin-bottom: var(--spacing-md);
+    display: block !important;
+    color: white;
 }
 
 .header__count {
     font-size: 1rem;
     opacity: 0.85;
     font-weight: 500;
+    display: block !important;
+    color: white;
 }
 
 /* ============================================
@@ -702,38 +603,6 @@ body {
     }
 }
 
-/* ============================================
-   Footer
-   ============================================ */
-.footer {
-    background: var(--color-gray-800);
-    color: white;
-    padding: var(--spacing-lg) 0;
-    text-align: center;
-    margin-top: var(--spacing-2xl);
-}
-
-.footer p {
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-}
-
-.footer__github {
-    margin-top: var(--spacing-sm);
-}
-
-.footer__link {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    font-size: 0.9375rem;
-    transition: color 0.2s ease;
-}
-
-.footer__link:hover {
-    color: white;
-    text-decoration: underline;
-}
 
 /* ============================================
    Controles de Impresión
