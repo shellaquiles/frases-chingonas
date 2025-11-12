@@ -142,6 +142,11 @@ const Renderer = {
         // Si hay un libro específico, mostrar información detallada
         if (libro && !isAllFrases) {
             // Ocultar texto simple y mostrar información del libro
+            const headerText = document.querySelector('.header__text');
+            if (headerText) {
+                headerText.style.display = 'none';
+            }
+
             if (titleEl) titleEl.style.display = 'none';
             if (authorEl) authorEl.style.display = 'none';
 
@@ -217,6 +222,11 @@ const Renderer = {
             }
         } else {
             // Mostrar texto simple para todas las frases
+            const headerText = document.querySelector('.header__text');
+            if (headerText) {
+                headerText.style.display = 'block';
+            }
+
             if (titleEl) {
                 titleEl.style.display = 'block';
                 titleEl.textContent = 'Todas las Frases Chingonas';
