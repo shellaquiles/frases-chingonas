@@ -2,6 +2,8 @@
 
 Sistema completo para gestionar, visualizar y compartir frases inspiradas en libros técnicos y de desarrollo profesional.
 
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=☕&slug=pixelead0&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/pixelead0)
+
 ## 📖 Descripción del Proyecto
 
 Este proyecto es una colección de **frases originales inspiradas** en libros técnicos y de desarrollo profesional. Cada frase está diseñada para ser breve, contundente y con sentido conceptual o práctico, capturando el espíritu y los principios de los libros de referencia en programación, arquitectura de software, liderazgo y desarrollo personal.
